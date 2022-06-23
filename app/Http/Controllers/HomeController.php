@@ -33,7 +33,7 @@ class HomeController extends Controller
      */
     public function superAdminHome()
     {
-        return view('superAdminHome');
+        return view('backend.superadmin.pages.index');
     }
 
     /**
@@ -43,6 +43,6 @@ class HomeController extends Controller
      */
     public function managerHome()
     {
-        return view('managerHome');
+        return view('backend.business.pages.index');
     }
 }
