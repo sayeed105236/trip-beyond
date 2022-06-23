@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
 @include('backend.superadmin.partials.header')
@@ -25,7 +25,7 @@
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-    @yield('content')
+    @yield('superadmin_content')
     <!-- END: Content-->
 
     <div class="sidenav-overlay"></div>
