@@ -1,0 +1,512 @@
+:root {
+  --primary-color: #057a8d;
+  --secondary-color: #f1c111;
+  --white-color: #ffffff;
+  --dark-color: #171819;
+  --project-bg: #f0f8ff;
+  --menu-bg: #0c8195;
+  --title-color: #15141a;
+  --gray-color: #909090;
+  --link-color: #404040;
+  --p-color: #666262;
+  --base-font-family: "Plain-Light", sans-serif;
+  --title-font-family: "Plain-Regular", sans-serif;
+  --font-bold-family: "Plain-Bold", sans-serif;
+  --font-weight-bold: bold;
+  --h1-font-size: 42px;
+  --h2-font-size: 32px;
+  --h3-font-size: 24px;
+  --p-font-size: 18px;
+  --base-font-size: 16px;
+  --menu-font-size: 14px;
+  --border-radius-large: 100px;
+  --border-radius-small: 5px;
+
+  ---grad-image: url(img/night.jpg);
+}
+
+body {
+  background: var(--white-color);
+  font-family: var(--base-font-family);
+}
+
+/*---------------------------------------
+     TYPOGRAPHY              
+  -----------------------------------------*/
+
+/*---------------------------------------
+     HERO              
+  -----------------------------------------*/
+
+.hero {
+  position: relative;
+  padding: 5em 0;
+  overflow: hidden;
+}
+
+.hero-bg {
+  background: linear-gradient(
+    120deg,
+    var(--white-color) 34%,
+    var(--primary-color) 30%
+  );
+}
+
+.hero-image {
+  position: relative;
+  top: 2em;
+}
+
+.copyright-position {
+  min-height: 270px;
+}
+
+hr.yellowhr {
+  border: 1px solid orange;
+}
+
+hr.blackhr {
+  border: 1px solid #000;
+  width: 60%;
+}
+
+tr {
+  height: 60px;
+}
+
+p {
+  line-height: 1 !important;
+}
+
+p.cardp {
+  line-height: 1.5 !important;
+}
+
+p.card2 {
+  line-height: 2 !important;
+  color: #000;
+}
+
+.head-content-latter {
+  letter-spacing: 3px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.text-yellow {
+  color: #c18b1a;
+}
+
+#div1 {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.card-bacground2 {
+  background-color: #dad5d5;
+}
+
+.card-bacground3 {
+  background-color: #ffffff;
+}
+
+.card-bacground3 {
+  background-color: #f7f7f7;
+}
+
+img.border-curve {
+  border-radius: 30px;
+}
+
+.border-curve2 {
+  border-radius: 30px;
+}
+
+div.col-text-center {
+  padding-top: 80px;
+}
+
+img.img1 {
+  max-width: 550px;
+  max-height: 400px;
+}
+
+.img-text1 {
+  text-align: right;
+}
+
+.box2 {
+  position: relative;
+  height: 400px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.box2::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgb(17, 17, 17);
+  transform: skew(2deg, 2deg);
+  z-index: -1;
+}
+
+a.sub-head {
+  background-color: #f7f7f7;
+  color: #000;
+  /* font-size: 22px; */
+  font-weight: bold;
+}
+
+.container2 {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container3 {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container4 {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.container5 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container6 {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.font-booking {
+  font-size: 11px;
+  line-height: 2 !important;
+}
+
+#custom-table {
+  width: 100%;
+}
+
+.mini-card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  /* word-wrap: break-word; */
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.vl {
+  border-left: 2px solid rgb(174, 184, 174);
+  height: 50px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 53px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tarek-card-center{
+  text-align: center;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  color: red;
+  left: 4px;
+  bottom: 4px;
+  background-color: #cf9c03;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.container-n {
+  margin-left: 100px;
+}
+
+.container-col {
+  margin-right: 150px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+#custom-table th {
+  background-color: #28157a;
+}
+
+.signup-or {
+  padding-top: 90px;
+}
+
+.social-login {
+  padding-top: 60px;
+}
+
+.btn-tarek {
+  background-color: orange;
+  border-color: orange orange orange;
+  color: #fff;
+}
+
+.btn-tarek2 {
+  background-color: #28157a;
+  border-color: #28157a #28157a #28157a;
+  color: #fff;
+}
+
+.grad-container {
+  min-height: 450px;
+  margin-left: 100px;
+}
+
+p.mini-p {
+  font-size: small;
+  line-height: 1.5 !important;
+}
+
+.tarek-card-hight {
+  max-height: 150px;
+}
+
+.tarek-price-details-card {
+  max-height: 310px;
+}
+
+.tarek-baggage-card {
+  max-height: 45px;
+}
+ .tarek-height{
+   line-height: 1.5 !important;
+ }
+
+ .tarek-cover-hight{
+  min-height: 320px;
+ }
+
+
+ .tarek-mini-card2{
+  border:1px solid;
+  padding:25px;
+  border-radius:20%;
+  max-height:55px;
+  max-width:95px;
+  background-color:#F7F7F7
+ }
+
+
+ .tarek-trip-date-card{
+  border:1px solid; 
+  padding:35px; 
+  border-radius:10%; 
+  max-height:50px;
+ }
+
+
+ .tarek-cover-margin{
+  margin-top: -220px;
+ }
+
+ .tarek-search-margin{
+  margin-left: -30px;
+ }
+
+
+ .tarek-vission-margin{
+  margin-top: -100px;
+ }
+
+ .tarek-vission-margin{
+  margin-top: 20px;
+ }
+
+
+ @media only screen and (max-width: 1100px) {
+
+  .tarek-cover-margin{
+    margin-top: -200px;
+   }
+
+
+   .tarek-vission-margin{
+    margin-top: 0px;
+   }
+   
+ }
+
+
+
+@media only screen and (max-width: 1000px) {
+
+  .tarek-cover-margin{
+    margin-top: -150px;
+   }
+
+
+  .tarek-trip-date-card{
+    border:1px solid; 
+    padding:35px; 
+    border-radius:10%; 
+    max-height:50px;
+    max-width: 50px;
+   }
+
+
+  .tarek-card-hight {
+    max-height: 350px;
+  }
+
+  .tarek-vission-margin{
+    margin-top: -50px;
+   }
+}
+  @media only screen and (max-width: 800px) {
+    .tarek-card-hight {
+      max-height: 450px;
+    }
+
+    .tarek-cover-margin{
+      margin-top: -150px;
+     }
+
+     .tarek-search-margin{
+      margin-left: 0px;
+     }
+
+     .tarek-vission-margin{
+      margin-top: -80px;
+     }
+
+     
+  }
+
+  @media only screen and (max-width: 600px) {
+    .hero-bg {
+      background: linear-gradient(
+        120deg,
+        var(--white-color) 50%,
+        var(--primary-color) 50%
+      );
+
+
+     
+    }
+
+    .tarek-vission-margin{
+      margin-top: -120px;
+     }
+
+    .tarek-cover-margin{
+      margin-top: -110px;
+     }
+
+    .copyright-position {
+      min-height: 75px;
+    }
+
+    img.to-left-border {
+      border-radius: 10px 10px 0 0;
+    }
+
+    .signup-or {
+      padding-top: 5px;
+      text-align: center;
+    }
+
+    .social-login {
+      padding-top: 6px;
+      text-align: center;
+    }
+
+    .container-n {
+      margin-left: 0px;
+    }
+
+    img.img1 {
+      max-width: 350px;
+      max-height: 200px;
+      margin-left: -25px;
+    }
+
+    .img-text1 {
+      text-align: center;
+    }
+
+    .container-col {
+      margin-right: 0px;
+    }
+
+    .grad-container {
+      min-height: 450px;
+      margin-left: 0px;
+    }
+
+    .tarek-baggage-card {
+      max-height: 85px;
+    }
+    .tarek-card-hight {
+      max-height: 520px;
+    }
+  }
+
