@@ -1,8 +1,9 @@
-<?php
+<?php 
   
 use Illuminate\Support\Facades\Route;
   
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomePageController;
   
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,12 @@ use App\Http\Controllers\HomeController;
 |
 */
   
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomepageController::class, 'index']);
+Route::get('/hotels', [HomepageController::class, 'hotels'])->name('hotels');
+Route::get('/packages', [HomepageController::class, 'packages'])->name('packages');
   
 Auth::routes();
   
@@ -49,4 +53,14 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/admin/system-settings', function () {
+    return view('backend.superadmin.pages.systemSettings');
 });

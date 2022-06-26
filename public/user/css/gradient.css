@@ -1,0 +1,740 @@
+:root {
+    --primary-color: #057a8d;
+    --secondary-color: #f1c111;
+    --white-color: #ffffff;
+    --dark-color: #171819;
+    --project-bg: #f0f8ff;
+    --menu-bg: #0c8195;
+    --title-color: #15141a;
+    --gray-color: #909090;
+    --link-color: #404040;
+    --p-color: #666262;
+    --base-font-family: "Plain-Light", sans-serif;
+    --title-font-family: "Plain-Regular", sans-serif;
+    --font-bold-family: "Plain-Bold", sans-serif;
+    --font-weight-bold: bold;
+    --h1-font-size: 42px;
+    --h2-font-size: 32px;
+    --h3-font-size: 24px;
+    --p-font-size: 18px;
+    --base-font-size: 16px;
+    --menu-font-size: 14px;
+    --border-radius-large: 100px;
+    --border-radius-small: 5px;
+
+    ---grad-image: url(img/night.jpg);
+}
+
+body {
+    background: var(--white-color);
+    font-family: var(--base-font-family);
+}
+
+/*---------------------------------------
+     TYPOGRAPHY
+  -----------------------------------------*/
+
+/*---------------------------------------
+     HERO
+  -----------------------------------------*/
+
+.hero {
+    position: relative;
+    padding: 5em 0;
+    overflow: hidden;
+}
+
+.hero-bg {
+    background: linear-gradient(
+        120deg,
+        var(--white-color) 34%,
+        var(--primary-color) 30%
+    );
+}
+
+.hero-image {
+    position: relative;
+    top: 2em;
+}
+
+.copyright-position {
+    min-height: 270px;
+}
+
+hr.yellowhr {
+    border: 1px solid #f6931d;
+}
+
+hr.blackhr {
+    border: 0.5px solid #000;
+    width: 60%;
+}
+
+tr {
+    height: 60px;
+}
+
+p {
+    line-height: 1 !important;
+}
+
+p.cardp {
+    line-height: 1.5 !important;
+}
+.carousel-width{
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.tarek-head {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+p.card2 {
+    line-height: 1.5 !important;
+    color: black;
+}
+
+.head-content-latter {
+    letter-spacing: 3px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.text-yellow {
+    color: #c18b1a;
+}
+
+#div1 {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.card-bacground2 {
+    background-color: #dad5d5;
+}
+
+.card-bacground3 {
+    background-color: #ffffff;
+}
+
+.card-bacground3 {
+    background-color: #f7f7f7;
+}
+
+img.border-curve {
+    border-radius: 30px;
+}
+
+.border-curve2 {
+    border-radius: 15px;
+}
+
+div.col-text-center {
+    padding-top: 80px;
+}
+
+img.img1 {
+    max-width: 550px;
+    max-height: 400px;
+}
+
+.img-text1 {
+    text-align: right;
+}
+
+.box2 {
+    position: relative;
+    height: 400px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+}
+
+.box2::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: rgb(17, 17, 17);
+    transform: skew(2deg, 2deg);
+    z-index: -1;
+}
+
+a.sub-head {
+    background-color: #f7f7f7;
+    color: #000;
+    /* font-size: 22px; */
+    font-weight: bold;
+}
+
+/* .container2 {
+    min-width: 980px !important;
+    margin: 0 auto;
+} */
+
+.call-btn {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: orange;
+}
+
+.container3 {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-image {
+    height: 70px;
+}
+
+.container4 {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.container5 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarek-container7 {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.tarek-border-bottom-black {
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.container6 {
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+.tarek-container-main {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 85% 15%;
+}
+
+.tarek-grid-30 {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-gap: 20px;
+}
+
+.tarek-container-main2 {
+    width: 85%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 88% 12%;
+    background-color: #ffff;
+}
+
+.flight-booking-card {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    background-color: #ffff;
+    padding: 25px 25px 25px 10px;
+
+    border-radius: 20px;
+}
+
+.flight-booking-card2 {
+    display: grid;
+    grid-template-columns: 14% 33% 33% 20%;
+    background-color: #ffff;
+    padding: 25px 25px 25px 10px;
+    border-radius: 20px;
+    border: 1px solid #f6f6f6;
+}
+
+
+@media only screen and (max-width: 768px) 
+{
+    .flight-booking-card2 {
+        display: grid;
+        grid-template-columns: initial;
+        grid-template-rows: 14% 33% 33% 20%;
+        background-color: #ffff;
+        padding: 25px 25px 25px 10px;
+        border-radius: 20px;
+        border: 1px solid #f6f6f6;
+    }
+}
+
+
+.tarek-card-part {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.tarek-text {
+    color: #f6931d;
+}
+
+.tarek-font {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.topline {
+    padding-bottom: 15px;
+}
+
+.second-grid-tarek {
+    display: grid;
+    grid-template-columns: 18px auto;
+    grid-gap: 5px;
+}
+
+.tarek-agency-form-card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 15px;
+}
+
+.tarek-padding-y {
+    padding-right: 35px !important;
+    padding-left: 35px !important;
+}
+
+.tarek-text-heading {
+    font-size: 12px;
+}
+
+.tarek-position {
+    position: relative;
+}
+
+.tarek-topleft {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 18px;
+}
+
+.tarek-svg {
+    height: 30px;
+    width: 68px;
+    background-color: #fff;
+}
+
+.tarek-text-dark {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tarek-service-img {
+    height: 320px !important;
+    width: 460px !important;
+}
+
+.tarek-polygon {
+    clip-path: polygon(0 0, 100% 0, 67% 100%, 0% 100%);
+}
+
+.text-black {
+    color: black;
+}
+
+.btn-tarek-grey {
+    background-color: #939393;
+}
+
+.third-grid-tarek {
+    display: grid;
+    grid-template-columns: 30px auto;
+}
+
+.flight-ticket-search {
+    display: grid;
+    grid-template-columns: 25% 20% 20% 12% 23%;
+}
+
+.tarek-border {
+    border: none;
+}
+
+.font-booking {
+    font-size: 11px;
+    line-height: 2 !important;
+}
+
+#custom-table {
+    width: 100%;
+}
+
+.mini-card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    /* word-wrap: break-word; */
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.vl {
+    border-left: 2px solid rgb(174, 184, 174);
+    height: 50px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tarek-card-center {
+    text-align: center;
+}
+
+.tarek-btn-mini {
+    height: 25px;
+    width: 50px;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    color: red;
+    left: 0px;
+    bottom: 0px;
+    background-color: #cf9c03;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.container-n {
+    margin-left: 100px;
+}
+
+.container-col {
+    margin-right: 150px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.tarek-bg-morning {
+    background-color: #efefef;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+#custom-table th {
+    background-color: #28157a;
+}
+
+.signup-or {
+    padding-top: 90px;
+}
+
+.social-login {
+    padding-top: 60px;
+}
+
+.btn-tarek {
+    background-color: #f6931d;
+    border-color: #f6931d #f6931d #f6931d;
+}
+::placeholder {
+    color: black !important;
+}
+
+.btn-tarek2 {
+    background-color: #28157a;
+    border-color: #28157a #28157a #28157a;
+    color: #fff;
+}
+
+.tarek-polygon-text{
+    position: absolute; 
+    top:0; 
+    width: 45%;
+}
+
+.or-pd{
+    padding-top: 110px !important;
+}
+
+.fb-pd{
+    padding-top: 70px !important;
+}
+
+.favourite-position{
+    margin-top: -75px;
+     margin-bottom: 60px;
+}
+.grad-container {
+    min-height: 450px;
+    margin-left: 100px;
+}
+
+p.mini-p {
+    font-size: small;
+    line-height: 1.5 !important;
+}
+
+.tarek-card-hight {
+    max-height: 150px;
+}
+
+.tarek-price-details-card {
+    max-height: 310px;
+}
+
+.tarek-baggage-card {
+    max-height: 45px;
+}
+.tarek-height {
+    line-height: 1.5 !important;
+}
+
+.tarek-cover-hight {
+    min-height: 320px;
+}
+
+.tarek-comment-topm{
+    margin-top: -20px !important;
+
+}
+
+.tarek-mini-card2 {
+    border: none;
+    padding: 25px;
+    border-radius: 15px;
+    max-height: 55px;
+    max-width: 95px;
+    background-color: #efefef;
+    margin: 5px;
+}
+
+.tarek-trip-date-card {
+    border: 1px solid;
+    padding: 36px;
+    border-radius: 10%;
+    max-height: 50px;
+}
+.tarek-trip-date-card:hover {
+    border: 1px solid orange;
+}
+
+.tarek-social-align-right {
+    text-align: right!important;
+}
+
+.tarek-social-align-left {
+    text-align: left!important;
+}
+
+
+
+.tarek-cover-margin {
+    margin-top: -220px;
+}
+
+.tarek-search-margin {
+    margin-left: -30px;
+}
+
+
+
+.tarek-img-border-contact-top{
+    height: 150px; 
+    width:150px; 
+    background-color: #F6931D; 
+    position:absolute; 
+    left: 135px; 
+    top: -13px; 
+    z-index: -1
+}
+
+.tarek-openning-margin-r{
+    margin-right: 150px !important;
+}
+
+@media only screen and (max-width: 1200px) 
+
+{
+    .or-pd{
+        padding-top: 0px !important;
+    }
+
+    .fb-pd{
+        padding-top: 0px !important;
+    }
+
+    img.img1 {
+        max-width: 750px !important;
+        max-height: 800px !important;
+    }
+
+    .tarek-img-border-contact-top{
+        height: 150px; 
+        width:150px; 
+        background-color: #F6931D; 
+        position:absolute; 
+        left: -15px; 
+        top: -13px; 
+        z-index: -1
+    }
+}
+@media only screen and (max-width: 992px) 
+
+{
+    .or-pd{
+        padding-top: 0px !important;
+    }
+
+    .fb-pd{
+        padding-top: 0px !important;
+    }
+
+    img.img1 {
+        max-width: 750px !important;
+        max-height: 800px !important;
+    }
+
+    .tarek-img-border-contact-top{
+        height: 150px; 
+        width:150px; 
+        background-color: #F6931D; 
+        position:absolute; 
+        left: -15px; 
+        top: -13px; 
+        z-index: -1
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+        .carousel-width {
+            width: 430px !important;
+            margin: 0 auto !important;
+        }
+
+        img.img1 {
+            max-width: 850px !important;
+            max-height: 800px !important;
+        }
+
+        .tarek-img-border-contact-top{
+            height: 150px; 
+            width:150px; 
+            background-color: #F6931D; 
+            position:absolute; 
+            left: -15px; 
+            top: -13px; 
+            z-index: -1
+        }
+    
+
+}
+@media only screen and (max-width: 576px) {
+    .tarek-polygon {
+        clip-path: polygon(0 0, 100% 1%, 54% 100%, 0% 100%);
+
+    }
+    .tarek-polygon-text{
+        position: absolute; 
+        top:0; 
+        width: 76%;
+    }
+
+    .container-n {
+        margin: 0 auto !important;
+    }
+
+    .tarek-img-border-contact-top{
+        height: 150px; 
+        width:150px; 
+        background-color: #F6931D; 
+        position:absolute; 
+        left: -15px; 
+        top: -13px; 
+        z-index: -1
+    }
+
+    .tarek-align-center{
+        
+        margin: 0 auto;
+    }
+
+    .tarek-openning-margin-r{
+        margin-right: 0px !important;
+    }
+
+    .favourite-position{
+        margin-top: -75px;
+         margin-bottom: 60px;
+         margin-left: -200px;
+    }
+
+    .carousel-width{
+        width: 430px !important;
+        margin: 0 auto !important;
+    }
+}
+
+
+
+
+

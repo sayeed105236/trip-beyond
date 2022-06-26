@@ -1,132 +1,1010 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.layout')
+@push('css')
+<link rel="stylesheet" href="{{URL::asset('cp/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{URL::asset('cp/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<style>
+    a#home-tab {
+        border: none;
+        background-color: #fff;
+        color: black;
+        margin: 2px 5px;
+        font-weight: normal;
+    }
 
-        <title>Laravel</title>
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        outline: 0;
+        margin: 0;
+        transform: translate3d(0, -50%, 0);
+        border-radius: 50%;
+    }
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    .select2-container--bootstrap4 .select2-selection {
+        background-color: #fff;
+        border: 0px solid #ced4da;
+        border-radius: 0.25rem;
+        -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+        width: 100%;
+    }
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+    .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow b {
+        top: 60%;
+        border-color: #343a40 transparent transparent;
+        border-style: solid;
+        border-width: 0px 0px 0;
+        width: 0;
+        height: 0;
+        left: 50%;
+        margin-left: -4px;
+        margin-top: -2px;
+        position: absolute;
+    }
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    .owl-carousel .owl-nav button[class*="owl-"]:hover,
+    .owl-carousel .owl-nav button[class*="owl-"].hover {
+        background-color: #151B49;
+        border-color: #151B49 #151B49 #151B49;
+    }
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+    .owl-carousel .owl-nav button[class*="owl-"] {
+        background-color: #151B49;
+        border-color: #151B49 #151B49 #151B49;
+        color: #FFF;
+    }
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
+    /* a#home-tab .active{
+                                                            background-color: gray;
+                                                        } */
+    a#home-tab:hover,
+    a#home-tab:focus,
+    a#home-tab:active {
+        border: none;
+    }
+
+    a#profile-tab {
+        border: none;
+        background-color: #fff;
+        color: black !important;
+        margin: 2px 5px;
+    }
+
+    a#profile-tab:hover,
+    a#profile-tab:focus,
+    a#profile-tab:active {
+        border: none;
+    }
+
+    a#contact-tab {
+        border: none;
+        background-color: #fff;
+        color: black;
+        margin: 2px 5px;
+    }
+
+    a#contact-tab:hover,
+    a#contact-tab:focus,
+    a#contact-tab:active {
+        border: none;
+    }
+
+
+    a#adult-tab {
+        border: none;
+        background-color: #fff;
+        color: black;
+        margin: 2px 5px;
+        font-weight: normal;
+    }
+
+    a#adult-tab:hover,
+    a#adult-tab:focus,
+    a#adult-tab:active {
+        border: none;
+    }
+
+    .tarek-border {
+        border: none;
+    }
+
+
+    a#economy-tab {
+        border: none;
+        background-color: #fff;
+        color: black;
+        margin: 2px 5px;
+        font-weight: normal;
+    }
+
+    a#economy-tab:hover,
+    a#economy-tab:focus,
+    a#economy-tab:active {
+        border: none;
+    }
+
+
+
+    a.active:hover,
+    a.active:focus,
+    a.active:active {
+        background-color: #d6d6d6 !important;
+        font-weight: 700 !important;
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        border: none !important;
+    }
+
+    input#departs {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    div#myTabContent {
+        border: none;
+    }
+
+    ul#myTab {
+        border: none;
+    }
+
+    p {
+        line-height: normal !important;
+    }
+</style>
+@endpush
+@section('content')
+<div role="main" class="main">
+    <div class="slider-container rev_slider_wrapper bg-color-grey-scale-1" style="max-height: 10px !importent">
+        <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider
+            data-plugin-options="{'width': 100%, 'height' : 485.6322px, 'delay': 9000, 'gridwidth': 1140, 'gridheight': 800, 'responsiveLevels': [4096,1200,992,500]}"
+            style="max-height: 10px !important;">
+            <ul>
+                <li data-transition="fade">
+                    <img src="{{URL::asset('user/img/banner-plan.jpeg') }}" alt="" data-bgposition="100% 100%"
+                        data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+                    <div class="tp-caption font-weight-light ws-normal text-center"
+                        data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":0,"split":"chars","splitdelay":0.00,"ease":"Power2.easeInOut"},{"delay":"wait","speed":0,"to":"y:[0%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                        data-x="center" data-y="center" data-voffset="['53','53','53','105']"
+                        data-fontsize="['18','18','18','40']" data-lineheight="['26','26','26','45']"
+                        style="color: #080808; width: 1200px;">
+                        <div class="row" style="width:70%; margin: 0 auto">
+
+                            <div class="col-md-12 d-flex justify-content-around pb-3" style="font-size: 1em;">
+                                <a href="" class=" w3-text-white d-flex"><i class="icon-plane icons"
+                                        style="color: #F6931D"></i> Flights</a>
+                                <a href="/hotels" class=" w3-text-white d-flex"><i
+                                        class="fas fa-hotel d-inline"></i>
+                                    Hotels</a>
+                                <a href="/packages" class=" w3-text-white d-flex"> <i
+                                        class="fa fa-gift d-inline"></i>
+                                    Packages</a>
+                                <a href="" class=" w3-text-white d-flex "> <i class="fa fa-bus d-inline"></i>
+                                    Transportation</a>
+                                <a href="" class=" w3-text-white d-flex"> <i class="icon-tag icons"></i> Special
+                                    deals</a>
                             </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
                         </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card w3-round-xxlarge"
+                                    style="height: 189.4276px; width:1086.8292px; margin: 0 auto;background-color: #ffff">
+                                    <div class="card-body w3-round-xxlarge w3-white" style="">
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
+                                        <div class="row tarek-card-center">
+                                            <div class="col-md-9">
+                                                <ul class="nav nav-tabs custom-navtab" id="myTab" role="tablist">
+                                                    <li class="nav-item active">
+                                                        <a class="nav-link sub-head custom-tab active" id="home-tab"
+                                                            data-toggle="tab" href="#home" role="tab"
+                                                            aria-controls="home" aria-selected="true">One Way</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link custom-tab" id="profile-tab"
+                                                            data-toggle="tab" href="#profile" role="tab"
+                                                            aria-controls="profile" aria-selected="false">Round Trip</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link custom-tab" id="contact-tab"
+                                                            data-toggle="tab" href="#contact" role="tab"
+                                                            aria-controls="contact" aria-selected="false">Multi CIty</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="btn sub-head nav-link d-flex" id="adult-tab" href="#"
+                                                            id="navbarDropdown" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                            Audit <span
+                                                                class="badge badge-warning text-dark d-inline-block p-1 ml-2"
+                                                                style="height:18px; width:18px; border-radius:50%">4</span>
+                                                            <i class="icon-arrow-down icons"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                            <a class="dropdown-item" href="#"> Adult <span
+                                                                    class="badge badge-warning text-dark d-inline-block p-1 ml-2"
+                                                                    style="height:18px; width:18px; border-radius:50%">1</span>
+                                                            </a>
+                                                            <a class="dropdown-item" href="#">Adult <span
+                                                                    class="badge badge-warning text-dark d-inline-block p-1 ml-2"
+                                                                    style="height:18px; width:18px; border-radius:50%">2</span></a>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
+                                                            <a class="dropdown-item" href="#">Adult <span
+                                                                    class="badge badge-warning text-dark d-inline-block p-1 ml-2"
+                                                                    style="height:18px; width:18px; border-radius:50%">3</span></a>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="btn sub-head nav-link d-flex" id="economy-tab"
+                                                            href="#" id="navbarDropdown" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                            Economy <i class="icon-arrow-down icons"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                            <a class="dropdown-item" href="#">Premium Economy</a>
+                                                            <a class="dropdown-item" href="#">Business</a>
+                                                            <a class="dropdown-item" href="#">First Class</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="switchbtn d-flex">
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                    <p class="d-inline pl-4 text-dark" style="font-size: 14px">Direct
+                                                        Flights only</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                                aria-labelledby="home-tab">
+                                                <form action="" method="GET">
+                                                    <input type="hidden" name="type" value="one-way">
+                                                    <div class="row pt-3">
+
+                                                        <div class="col-md-2">
+                                                            <div class="row pt-2">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3"
+                                                                        style="color: #F6931D ">
+                                                                        <label for="from" style="font-size:14px">
+                                                                            From*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <div class="text-left">
+                                                                        <select id="user" name="from" role="textbox"
+                                                                            class="form-control  step2-select select2"
+                                                                            data-placeholder="Select City"
+                                                                            data-ajax-url=""
+                                                                            data-ajax-cache="true"
+                                                                            data-ajax-dataType="json"
+                                                                            data-ajax-delay="200"
+                                                                            style="border: none !important; width:150px">
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <img class="mt-3"
+                                                                src="{{URL::asset('user/img/bi-direction.png') }}" alt="">
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3"
+                                                                        style="color: #F6931D">
+                                                                        <label for="to" style="font-size:14px">
+                                                                            To*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <div class="">
+                                                                        <select id="modal-container" name="to"
+                                                                            class="seleect5 search form-control"
+                                                                            data-placeholder="Select City"
+                                                                            data-ajax-url=""
+                                                                            data-ajax-cache="true"
+                                                                            data-ajax-dataType="json"
+                                                                            data-ajax-delay="200"
+                                                                            style="border: none !important; width:150px">
+
+                                                                        </select>
+                                                                        {{-- <input class="form-control w3-border-0"
+                                                                            type="text" name="to" id="to"
+                                                                            placeholder="Type City Name"> --}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="vl"></div>
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3"
+                                                                        style="color: #F6931D ">
+                                                                        <label for="departs" style="font-size:14px">
+                                                                            Departs*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left ">
+                                                                        <input name="departs" id="departs"
+                                                                            class="form-control w3-border-0"
+                                                                            type="date">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+{{--                                                        <div class="col-md-2  pt-2">--}}
+{{--                                                            <div class="row">--}}
+{{--                                                                <div class="col-md-12">--}}
+{{--                                                                    <div class="text-left pl-2 pb-3"--}}
+{{--                                                                        style="color: #F6931D ">--}}
+{{--                                                                        <label for="return" style="font-size:14px">--}}
+{{--                                                                            Return</label>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="col-md-12">--}}
+{{--                                                                    <div class="text-left ">--}}
+{{--                                                                        <input name="return" id="return"--}}
+{{--                                                                            class="form-control w3-border-0"--}}
+{{--                                                                            type="date">--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+
+{{--                                                        </div>--}}
+
+
+                                                        <div class="col-md-2 text-center">
+                                                            <div class="row pt-4">
+                                                                <div class="col-md-12">
+                                                                    <input type="submit" value="Search"
+                                                                        class="btn btn-tarek btn-block font-weight-bold w3-text-light w3-round-xxlarge"
+                                                                        style="font-size: 14px">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane fade" id="profile" role="tabpanel"
+                                                aria-labelledby="profile-tab">
+                                                <form action="" method="GET">
+                                                    <input type="hidden" name="type" value="two-way">
+                                                    <div class="row pt-3">
+                                                        <div class="col-md-2">
+                                                            <div class="row pt-2">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="from"> From*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl2">
+                                                                        <input name="from" id="from"
+                                                                            class="form-control w3-border-0" type="text"
+                                                                            placeholder="Type City Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <img class="mt-3"
+                                                                src="{{URL::asset('user/img/bi-direction.png') }}" alt="">
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="to"> To*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left">
+                                                                        <input class="form-control w3-border-0"
+                                                                            type="text" name="to" id="to"
+                                                                            placeholder="Type City Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="vl"></div>
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="departs"> Departs*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl2">
+                                                                        <input name="departs" id="departs"
+                                                                            class="form-control w3-border-0"
+                                                                            type="date">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="return"> Return</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2">
+                                                                        <input name="return" id="return"
+                                                                            class="form-control w3-border-0"
+                                                                            type="date">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2 text-center">
+                                                            <div class="row pt-4">
+                                                                <div class="col-md-12">
+                                                                    <input type="submit" value="Search"
+                                                                        class="btn btn-tarek w3-text-light w3-round-xxlarge">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane fade" id="contact" role="tabpanel"
+                                                aria-labelledby="contact-tab">
+                                                <form action="" method="GET">
+                                                    <input type="hidden" name="type" value="multi-way">
+                                                    <div class="row pt-3">
+                                                        <div class="col-md-2">
+                                                            <div class="row pt-2">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="from"> From*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl2">
+                                                                        <input name="from" id="from"
+                                                                            class="form-control w3-border-0" type="text"
+                                                                            placeholder="Type City Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <img class="mt-3"
+                                                                src="{{URL::asset('user/img/bi-direction.png') }}" alt="">
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="to"> To*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left">
+                                                                        <input class="form-control w3-border-0"
+                                                                            type="text" name="to" id="to"
+                                                                            placeholder="Type City Name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="vl"></div>
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="departs"> Departs*</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl2">
+                                                                        <input name="departs" id="departs"
+                                                                            class="form-control w3-border-0"
+                                                                            type="date">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2  pt-2">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2 pb-3 w3-text-yellow">
+                                                                        <label for="return"> Return</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="text-left pl-2">
+                                                                        <input name="return" id="return"
+                                                                            class="form-control w3-border-0"
+                                                                            type="date">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2 text-center">
+                                                            <div class="row pt-4">
+                                                                <div class="col-md-12">
+                                                                    <input type="submit" value="Search"
+                                                                        class="btn btn-tarek w3-text-light w3-round-xxlarge">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @include('alerts.alerts')
+    <div class="container4 pt-3 py-3">
+        <div class="row ">
+            <div class="col-md-12 mt-2">
+                <div class="text-center">
+                    <p> <small><span class="font-weight-bold w3-text-black"> News/Covid information:</span> Trip beyond
+                            is one
+                            of the fastest growing agencies based in Dhaka, Bangladesh which is certified by
+                            International
+                            Air Transport Association (IATA).
+                            This company Was established with the slogan "Go beyond your dreams." We are trully commited
+                            to
+                            providing you with quality services to make your tours easier, convented and hassle free.
+                            Aliquyam sadipscing sed eos labore
+                            voluptua at, ipsum diam sanctus ea kasd ea lorem, ut consetetur eirmod sea stet
+                            magna.</small></p>
+                    <a class="w3-white font-weight-bold" style="border-bottom: 1px solid #D0D0D0" href="">Red More</a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+
+    <div class="container py-2 pt-5">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+
+                        <div class="text-center">
+                            <p class="w3-text-black" style="font-size: 18px;"><b>Find Great Deals, Only for you</b>
+                            </p>
+                        </div>
+
+                        <div class="lightbox carousel-width "
+                            data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
+                            <div class="owl-carousel owl-theme stage-margin"
+                                data-plugin-options="{'items': 3, 'margin': 15, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': -155}">
+
+                                
+                                <div>
+                                    <img class="img-fluid w3-round-xxlarge"
+                                        src="{{URL::asset('user/img/projects/project.jpg') }}"
+                                        style="height: 195px; width:342px; position: relative" alt="Project Image">
+                                    <div style="position: absolute; z-index: 99;top:0" class="p-5 pb-3">
+                                        <p> <span class="w3-text-white  font-weight-bold" style="font-size: 22px;">abcd <br></span> </p>
+                                        <div class="w3-text-orange w3-large">234 <br>
+                                            <div class="">
+                                                <a href=""
+                                                    class="btn w3-text-white w3-large">Plan it now <i
+                                                        class="fas fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                {{-- <div>
+                                    <img class="img-fluid w3-round-xxlarge"
+                                        src="{{URL::asset('user/img/projects/project.jpg') }}"
+                                        style="height: 240px;" alt="Project Image">
+                                    <p class="p-3" style="margin-top: -210px;"> <span
+                                            class="w3-text-white  font-weight-bold" style="font-size: 22px;">{{
+                                            qwerty <br></span> </p>
+                                    <div class="w3-text-orange w3-large p-3 pb-2">5454 <br>
+                                        <div class="pt-5 mt-1">
+                                            <a href=""
+                                                class="btn w3-text-white w3-large">Plan it now <i
+                                                    class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <div style="display: none">
+
+                                </div>
+
+
+
+                                {{-- <div>
+                                    <img class="img-fluid w3-round-xxlarge"
+                                        src="{{URL::asset('user/img/projects/project.jpg') }}" alt="Project Image">
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container py-2 pt-4">
+
+        <div class="row">
+            <div class="col">
+
+
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="text-center">
+                            <p class="w3-text-black" style="font-size: 18px;"><b>Exclusives from our partners</b></p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="blog-posts">
+
+                                            <article class="post post-medium btn btn-rounded ">
+                                                <div class="post-image tarek-position">
+                                                    <a href="#">
+                                                        <img src="{{URL::asset('user/img/sea_view.jpg') }}"
+                                                            class="img-fluid img-thumbnail-no-borders rounded-5 border-curve"
+                                                            alt="Promotional Ads" />
+                                                    </a>
+                                                    <div class="tarek-topleft">
+                                                        <button
+                                                            class="btn btn-tarek2 btn-rounded px-3">Promotion</button>
+
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="row pl-5 pt-3">
+                                            <p class="w3-text-black font-weight-bold">Last minute Summer Trip</p>
+                                        </div>
+                                        <div class="row pl-4">
+                                            <div class="col-md-9">
+                                                <p><small>It is a long established fact that a reader will be distracted
+                                                        by the readable content of a page
+                                                        when looking at its layout.</small></p>
+                                            </div>
+                                            <div class="col-md-3" style="height: 40px">
+                                                <a class="btn btn-tarek btn-block btn-lg text-dark font-weight-bold btn-rounded"
+                                                    href="">Let's go</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-4 pt-3">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="post-image tarek-position">
+                                            <a href="">
+                                                <img src="{{URL::asset('user/img/promotion2.jpg') }}"
+                                                    class="img-fluid img-thumbnail img-thumbnail-no-borders w3-round-xxlarge"
+                                                    style="height: 310px;" alt="Promotional Ads 2" />
+                                            </a>
+                                            <div class="tarek-topleft">
+                                                <button class="btn btn-tarek2 btn-rounded px-3">Promotion</button>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-5">
+                                            <div class="col-md-12">
+                                                <p class="w3-text-black font-weight-bold">Flying from Delhi-London?</p>
+                                            </div>
+                                            <div class="row pt-2">
+                                                <div class="col-md-8">
+                                                    <p><small>It is a long established fact that a
+                                                            reader will be distracted by the r
+                                                            eadable content of a page when
+                                                            looking at its layout.</small></p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a class="btn btn-tarek btn-lg text-dark font-weight-bold btn-block btn-rounded"
+                                                        href="">Book Now
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container py-2 pt-4">
+        <img src="{{URL::asset('user/img/projects/project.jpg') }}" alt="">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <p class="w3-text-black" style="font-size: 18px;"><b>Favourite Destination Packages</b>
+                            </p>
+                        </div>
+                        <div class="lightbox text-center">
+                            <div class="carousel-width owl-carousel owl-theme stage-margin text-center "
+                                data-plugin-options="{'items': 3, 'margin': 15, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
+                                <div>
+                                    <img class="img-fluid w3-round-xxlarge btn-rounded text-center"
+                                        src="{{URL::asset('user/img/projects/project.jpg') }}"
+                                        style="height: 270px; width:2700px;" alt="Project Image">
+
+                                    <div class="text-center favourite-position" style="">
+                                        <a href=""
+                                            class="btn btn-tarek w3-round-xlarge font-weight-bold d-inline-block px-4 "
+                                            style="font-size: 14px">Hotel Bulbuli</a>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <span class="w3-text-black" style="font-size: 16px;"><b>USA</b></span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+@endsection
+@push('extra')
+<div class="container p-5 m-3">
+
+
+    <div class="row">
+        <div class="col">
+            <div class="blog-posts">
+
+                <p class="black font-weight-bold" style="font-size: 18px;">Featured Flight Destinations</p>
+
+                <p class="mini-p">It is not always easy to find flights that suit our budget and personal needs. With
+                    all the flight booking websites out there, it becomes even tougher to find the right one. It can be
+                    frustrating when you don’t find the desired flights after hours of searching. But Trip Beyond makes
+                    it really easy for you to fly with our exclusive services which helps you get your desired flights
+                    in one click.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <div class="blog-posts">
+
+                <p class="black font-weight-bold" style="font-size: 18px;">Featured Tours & Tickets</p>
+
+                <p class="mini-p">We are a top-rated travel agency that provides customers with an extensive list of
+                    tours and air tickets. We help you travel to your favorite destinations across the globe, including
+                    London, Paris, Athens, New York City, Toronto,Madrid and more with ease and convenience. Trip Beyond
+                    also has a worldwide network of partners that allow them to offer tours</p>
+                <p class="mini-p">Tour packages are created with your desired itinerary in mind. You can choose from a
+                    variety of different tours for every type of traveler. We offer everything from backpacking trips to
+                    luxury vacations, or whatever you want!</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="blog-posts">
+
+                <p class="black font-weight-bold" style="font-size: 18px;">Save on Travel with tripbeyond.com</p>
+
+                <p class="mini-p">Trip Beyond is a company that offers affordable holiday packages to places all over
+                    the world. Our goal is to find the perfect trip for our clients, at the best prices. We Offer you
+                    holiday packages that are cheaper than what you would find anywhere else online.</p>
+
+                <p class="mini-p">Thinking of your holidays but not sure where to start? Check out Trip beyond, we have
+                    holiday packages to suit any budget and for all kinds of people.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <div class="blog-posts">
+
+                <p class="black font-weight-bold" style="font-size: 18px;">Featured Hotel Destinations</p>
+
+                <p class="mini-p">Trip Beyond is an online portal that lets you explore and book some of the best hotels
+                    in the world. We provide a variety of services and facilities to its customers.
+                </p>
+                <p class="mini-p">Our dedicated team in Trip Beyond has selected and partnered with leading hotel brands
+                    to help their customers find their desired hotels in one click. Moreover, we also provide some
+                    exclusive offers for our valued customers.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+@endpush
+@push('js')
+<!-- Select2 -->
+<script src="{{URL::asset('cp/plugins/select2/js/select2.full.min.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+
+        // $('.select2').select2({
+        //     theme: 'bootstrap4'
+        // });
+
+        // function formatState(state) {
+        //     if (!state.id) { return state.img; }
+        // var $state = $(
+        //   '<span><img src="storage/product/' + state.img + '" class="img-loaded" /> <p>' + state.title + '</p> </span>'
+        // );
+
+        // var base_url = window.location.origin;
+        // var url = base_url + '/storage/product/' + state.img;
+
+        //     var $state = $(
+        //         '<div class="media"><div class="media-body"><h4 class="media-heading" style="margin-top:4px;margin-bottom:-2px;">' + state.title + '</h4> ' + state.cat + ' > ' + state.sub + ' > ID:' + state.pr + '</div></div>'
+        //     );
+        //     return $state;
+        // };
+
+        var flightFrom = $('.step2-select').select2({
+            theme: 'bootstrap4',
+            containerCssClass: "tarek-border",
+            containerCss: "border:none",
+            // templateResult: formatState,
+
+            // minimumInputLength: 1,
+            ajax: {
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function (data, params) {
+                    params.page = params.page || 1;
+                    // alert(data[0].s);
+                    var data = $.map(data, function (obj) {
+                        obj.id = obj.Code || obj.Code;
+                        return obj;
+                    });
+                    var data = $.map(data, function (obj) {
+                        obj.text = "(" + obj.Code + ") " + obj.name;
+                        return obj;
+                    });
+                    return {
+                        results: data,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                }
+            },
+        });
+
+
+
+        //// To
+
+
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        // seleect5 search
+        // $('.seleect5').select2({
+        //     theme: 'bootstrap4'
+        // });
+
+        $('.search').select2({
+            theme: 'bootstrap4',
+            containerCssClass: ".search",
+            // minimumInputLength: 1,
+            ajax: {
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function (data, params) {
+                    params.page = params.page || 1;
+                    // alert(data[0].s);
+                    var data = $.map(data, function (obj) {
+                        obj.id = obj.Code || obj.Code;
+                        return obj;
+                    });
+                    var data = $.map(data, function (obj) {
+                        obj.text = "(" + obj.Code + ") " + obj.name;
+                        return obj;
+                    });
+                    return {
+                        results: data,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                }
+            },
+        });
+
+        //// To
+
+
+    });
+</script>
+@endpush

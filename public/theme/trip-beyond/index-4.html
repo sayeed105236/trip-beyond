@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Trip Beyond</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- cdn link here -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- End cdn link -->
+
+  <!-- Main css file -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!---Header section--->
+        <section class="headercustom mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                      <div class="logo mt-4">
+                        <h2><strong style="color: #F6931D;">Trip</strong>Beyond</h2>
+                      </div>
+                        
+                    </div>
+                    <div class="col-9">
+                        <div class="leftnavbar mt-4 float-right">
+                          <ul>
+                            <li>
+                              <select name="" id="">
+                                <option value="">USD</option>
+                                <option value="">BD</option>
+                             </select>
+                           </li>
+
+                          <li><a href="#">Sign In  |</a></li>
+                           
+                          <li><a href="">Sign Up</a></li>
+              
+                          <li><button class="btn btn-warning btn-sm px-3" style="border-radius: 20px;" >Agent Login</button></li>
+                          <li><a href="#" class="btn btn-warning btn-sm" style="border-radius: 100px;"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                          </ul>
+                        </div>                        
+                    </div>
+                    <div class="col-md-10 offset-md-1">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav m-auto">
+                                  <li class="nav-item active">
+                                    <a class="nav-link" href="#" style="color: aliceblue;"><i class="fa fa-plane" aria-hidden="true" style="color: #E0A800;"></i>&nbsp;Flights</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#" style="color: aliceblue;"><i class="fa fa-building" aria-hidden="true"></i>&nbsp;Hotels </a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#" style="color: aliceblue;"><i class="fa fa-gift" aria-hidden="true"></i>&nbsp; Packages </a>
+                                  </li>
+                                  <li class="nav-item">                     
+                                    <a class="nav-link" href="#" style="color: aliceblue;"> <i class="fa fa-car" aria-hidden="true"></i> &nbsp;Transportation </a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#" style="color: aliceblue;"><i class="fa fa-deaf" aria-hidden="true"></i> &nbsp; Special deals </a>
+                                  </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-md-10 offset-md-1 mt-2">
+                        <div class="Middelnavbar" style="background-color: white;">
+                            <div class="row">
+                                <div class="col-md-9">
+                                  <nav class="navbar navbar-expand-lg navbar-light mt-5">
+                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                      <ul class="navbar-nav mr-auto ml-5">
+                                        <li class="nav-item active mr-3">
+                                          <a class="nav-link" href="#" style="font-size:12px; color: black;">One Way</a>
+                                        </li>
+                                        <li class="nav-item mr-3">
+                                          <a class="nav-link" href="#" style="font-size:12px; color: black;">Round Trip</a>
+                                        </li>
+                                        <li class="nav-item mr-2">
+                                          <a class="nav-link" href="#" style="font-size:12px; color: black;">Multi City</a>
+                                        </li>
+                                        <li class="nav-item dropdown mr-3">
+                                          <a class="nav-link dropdown-toggle" style="font-size:12px; color: black;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Adult
+                                          </a>
+                                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                          </div>
+                                        </li>
+                                        <li class="nav-item dropdown mr-3">
+                                          <a class="nav-link dropdown-toggle" style="font-size:12px; color: black;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Economy
+                                          </a>
+                                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                          </div>
+                                        </li>
+                                      </ul>
+                  
+                                    </div>
+                                  </nav>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                      <div class="navbartexts mt-4 ml-2">
+                                        <p style="font-size: 10px;color:chocolate;" class="ml-4">From*</p>
+                                        <p class="ml-4">Type city name</p>
+                                      </div>
+                                    </div>
+                                <div class="col-md-1 mt-4">
+                                      <div class="navbaricon">
+                                        <i class="fa fa-arrows" aria-hidden="true"></i>
+                                      </div>
+                                </div>
+                                <div class="col-md-3 mt-4">
+                                  <div class="navbartexts  ml-2">
+                                    <p style="font-size: 10px;color:chocolate; ">To*</p>
+                                    <p>Type city name</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-1 mt-4">
+                                  <div class="vl"></div>
+                                </div>
+
+                                <div class="col-md-2 mt-4">
+                                  <div class="navbartexts ml-2">
+                                    <p style="font-size: 10px;color:chocolate;">Depart*</p>
+                                    <p>Select Date</p>
+                                </div>
+                                </div>
+                                <div class="col-md-2 mt-4 ">
+                                  <div class="navbartexts">
+                                    <p style="font-size: 10px;color:chocolate;">Return</p>
+                                    <p>Select Date</p>
+                                  </div>
+                                </div>
+
+                                </div>
+                                </div>
+                                
+                            
+                              <div class="col-md-3">
+                                  <div class="switchbtn mt-5">
+                                  <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                  </label>
+                                  <p class="d-inline">Direct Flights only</p>
+                                  </div>
+                                  <div class="searchbtn mt-5">
+                                  <button class="btn btn-warning">Search</button>
+
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---Header section-->
+        <!--Main Section-->
+        <section class="Maincustom mt-2">
+            <div class="container">
+              <div class="row">
+                    <div class="col-md-8 offset-md-2 ">
+                        <div class="card rounded-pill">
+                            <div class="card-body">
+                            <div class="middeltext ml-3">
+                            <p class="text-justify">
+                              News / Covid information : It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+                              its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, 
+                              content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum.
+                             </p>
+                            </div> 
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-12 mt-4 mb-4">
+                        <h5 class="text-center">Find Great Deals,Only for you</h5>
+                    </div>
+                     <div class="col-md-4">
+                          <div class="thumbnail">
+                            <a href="#" target="_blank">
+                              <img src="assets/image/air2.jpg" alt="first Image" style="width:100%">
+                              <div class="caption5">
+                                <h1 style="color: #F6931D;">10% OFF</h1>
+                                <h3 class="text-white">With KLM</h3>
+                                <button class="btn btn-warning mt-4">Book Now</button>
+                              </div>
+                            </a>
+                          </div>
+                      </div>
+
+                        <div class="col-md-4">
+                              <div class="thumbnail">
+                                <a href="#" target="_blank">
+                                  <img src="assets/image/new.jpg" alt="Nature" style="width:100%">
+                                  <div class="caption5 text-justify">
+                                    <h3 class="text-justify text-white">Next pocket friendly <br>Trip?</h3>
+                                    <h4 style="color:#F6931D" class="text-justify">With KLM</h4>
+                                    <a class="mt-5 text-white">Plan it now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                  </div>
+                                </a>
+                              </div>
+                        </div>
+                         <div class="col-md-4">
+                            <div class="thumbnail">
+                              <a href="#" target="_blank">
+                                <img src="assets/image/h.jpg" alt="Fjords" style="width:100%">
+                                <div class="caption5">
+                                  <h4 class="text-justify mt-4"> <i class="fa fa-star" aria-hidden="true"></i><span class="text-white">5 start stays span</span></h4>
+                                  <h4 class="text-white">are now more affordable</h4>
+                                  <button class="btn btn-warning mt-4">Book Now</button>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                      
+                        <div class="col-md-12 mt-5 mb-4">
+                            <h5 class="text-center">Exclusives from our partners</h5>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="thumbnails">
+                            <a href="#" target="_blank">
+                              <img src="assets/image/l1.jpg" alt="Nature" style="width:100%">
+                              <div class="captions">
+                                <span>Promotional</span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="thumbnails">
+                            <a href="#" target="_blank">
+                              <img src="assets/image/air.jpg" alt="Nature" style="width:100%">
+                              <div class="captions">
+                                <span>Promotional</span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <!-------->
+                        <div class="col-md-6">
+                          <div class="tumbnailtexts mt-5">
+                            <h5>Last minute Summer Trip</h5>
+                            <p style="color:#53453e">It is a long established fact that a reader will be distracted by the readable content of a page
+                              when looking at its layout.</p>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="t_button">
+                            <button class="px-5 mt-5 btn btn-warning">Lets Go</button>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="tumbnailtext2 mt-5 d-inline-block" style="width:70%">
+                            <h5 class="mt-2">Flying from Delhi-London?</h5>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                              when looking at its layout.</p>
+                          </div>
+                          <div class="t_button  d-inline-block float-right" style="width:30% ;margin-top: 57px">
+                              <a class="btn btn-warning float-left">Book Now</a>
+                          </div>
+                          </div>
+                        </div>
+ 
+             
+                    <div class="row mb-5">
+                      <div class="col-md-12">
+                        <div class="text-3">
+                          <h5 class="text-center mb-5">Favourite Destination Packages</h5>
+                        </div>
+                      </div>
+                      <!--Image-->
+                      <div class="col-md-3">
+                        <div class="thumbnail">
+                          <a href="#" target="_blank">
+                            <img src="assets/image/f1 (1).jpg" alt="Nature" style="width:100%">
+                            <div class="caption">
+                              <button class="btn btn-warning">Plan Trip</button>
+                            </div>
+                          </a>
+                        </div>
+                        <br>
+                        <h5 class="text-center mt-1">Dhaka</h5>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="thumbnail">
+                          <a href="#" target="_blank">
+                            <img src="assets/image/f1 (2).jpg" alt="Nature" style="width:100%">
+                            <div class="caption">
+                              <button class="btn btn-warning">Plan Trip</button>
+                            </div>
+                          </a>
+                        </div>
+                        <br>
+                        <h5 class="text-center mt1">Cumilla</h5>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="thumbnail">
+                          <a href="#" target="_blank">
+                            <img src="assets/image/f1 (3).jpg" alt="Nature" style="width:100%">
+                            <div class="caption">
+                              <button class="btn btn-warning">Plan Trip</button>
+                            </div>
+                          </a>
+                        </div>
+                        <br>
+                        <h5 class="text-center mt1">London</h5>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="thumbnail">
+                          <a href="#" target="_blank">
+                            <img src="assets/image/f1 (4).jpg" alt="Nature" style="width:100%">
+                            <div class="caption">
+                              <button class="btn btn-warning">Plan Trip</button>
+                            </div>
+                          </a>
+                        </div>
+                        <br>
+                        <h5 class="text-center mt1">Paris</h5>
+                      
+                      </div>
+
+                    </div>
+              <!--end row-->
+                <div class="row">
+                  <div class="col-md-12">
+                    
+                      <div class="Appdetails">
+                        <a href="#" target="_blank">
+                          <img src="assets/image/bg2.jpeg" alt="Nature" style="width:100%; height: 300px; border-radius: 20px;" >
+                          <div class="parent">
+                            <div class="caption1 text-justify">
+                                <h4>Download Our App</h4>
+                                <h4>and personalise your travel booking</h4>
+                                <h4>experience</h4>
+                            </div>
+
+                            <div class="borderTable">
+                              <div id="borderLeft"></div>
+                              <div id="borderright"></div>
+                            </div>
+                            <div class="imagesApp">
+                              <div class="image1">
+                              <a href="#"><img src="assets/image/s1.png" height="50px" width="100px"></a>
+                              <br>
+                                <a><img src="assets/image/s2.png" height="50px" width="100px" class="mt-2" ></a>
+                              </div>
+                            </div>
+
+                            <div class="AppsOr">
+                              <p class="">Or</p>
+                            </div>
+                            <div class="Appsbarcode">
+                              <a href="#"><img src="assets/image/s3.png" height="100px" width="100px"></a>
+                            </div>
+                          </div>
+                          <div>
+                              
+                        </div>
+                        </div>
+                        </a>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                       <div class="content" style="margin-top:50px">
+                         <h5>Save on Travel with tripbeyond.com</h5>
+                         <p>Tripbeyond.com is a rapidly-growing global online travel agency, Tripbeyond.com is here to help you plan the perfect trip. Whether you're going on holiday, taking a business trip, or
+                          looking to set up a corporate travel account, Tripbeyond.com is here to help you travel the world with cheap flights, discount hotels, and train tickets. Looking to find great travel deals or 
+                         enjoy the biggest savings on your next trip? Trip.com has you covered. With our easy-to-use website and app, along with 24-hour customer service, booking your next trip couldn't be
+                          simpler. With Tripbeyond.com, quality travel services in over a dozen languages including English, Mandarin, Cantonese, Japanese, Korean, German, French, and Spanish are just a call—
+                         or click—away. Easily Customize Your Trip with the Best Hotel and Flight Deals</p>
+                         <p>It's easy to customize your travel experience with our robust flight and hotel search filter options and Trip.com travel tools like flight fare alerts, deal-finder calendar, and early bird deals. 
+                         Tripbeyond.com's secure payment system takes the stress out of travel by providing easy payment options, including credit and debit cards, and UnionPa</p>
+                       </div>
+                       <div class="content">
+                        <h5>Featured Hotel Destinations</h5>
+                        <p>Hotels in Shanghai | Hotels in Beijing | Hotels in Guangzhou | Hotels in Shenzhen | Hotels in Hangzhou | Hotels in Xiamen | Hotels in Chengdu | Hotels in Hong Kong | Hotels in Macau | Hotels
+                          in Tokyo | Hotels in Osaka | Hotels in Kyoto | Hotels in Fukuoka | Hotels in Sapporo | Hotels in Seoul | Hotels in Taipei | Hotels in Singapore | Hotels in Kuala Lumpur | Hotels in Bangkok | 
+                          Hotels in Da Nang</p>
+                      </div>
+                      <div class="content">
+                        <h5>Featured Flight Destinations</h5>
+                        <p>Flights to Cebu | Flights to Jakarta | Flights to Hanoi | Flights to Chengdu | Flights to Phuket | Flights to Macau | Flights to Ho Chi Minh | Flights to Osaka | Flights to Shenzhen | Flights to 
+                          Shanghai | Flights to Beijing | Flights to Hong Kong | Flights to Seoul | Flights to Bangkok | Flights to Taipei | Flights to Singapore | Flights to Tokyo | Flights to Manila | Flights to Guangzhou | 
+                          Flights to Kuala Lumpur</p>
+                      </div>
+                      <div class="content" style="margin-bottom: 100px;">
+                        <h5>Featured Tours & Tickets</h5>
+                        <p>Shanghai Disneyland Ticket | Forbidden City Ticket | Terracotta Warriors Ticket | Sichuan Opera Show Ticket | Universal Orlando Ticket | Legoland Florida Ticket | Antelope Canyon Ticket | 
+                          Empire State Building Observation Deck Ticket | Statue of Liberty Cruise | Kualoa Ranch Day Tour</p>
+                      </div>
+                    </div>
+                </div>          
+              </div>
+
+
+              <!--end container-->
+                </div> 
+
+
+        </section>
+        <!--Main Section-->
+        <section>
+          <div class="fottercustom"  >
+            <div class="container">
+              <div class="row" > 
+                <div class="col-md-2 footer_content">  
+                <img src="assets/image/logo.png" height="50px" width="100%" >
+                <br><br><br><br>
+                <span class="copytext">Copyrights:All Rights Reserved</span>
+                </div>
+                <div class="col-md-2 footer_content">
+                    <div class="companytext ml-3">
+                      <h4>Company</h4>
+                      <p>About</p>
+                      <p>Career</p>
+                      <p>Patner Login</p>
+                      <p>Privacy Policy</p>
+                      <p>T&C</p>
+                      <p>Blog</p>
+                      <p>Promotions</p>
+                      <p>Affiliate Program</p>
+                    </div>
+                </div>
+                <div class="col-md-1 footer_content">
+                  <h4>Booking</h4>
+                  <div class="companytext mr-2">
+                  <p>Flights</p>
+                  <p>Packages</p>
+                  <p>Transportation</p>
+                  <p>pecial deals</p>
+                </div>
+                </div>
+                <div class="col-md-2 footer_content">
+                  <div class="socail ml-4">
+                    <h4 class="">Social Media</h4>
+                    <div class="icon">
+                      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2 footer_content">
+                  <h4>Contact us</h4>
+                  <p>Help</p>
+                  <p>1800-100-767-00</p> 
+                </div>
+                <div class="col-md-2 footer_content">
+                  <h4>We accept</h4>
+                  <div class="bankCard">
+                    <img src="assets/image/am.jpg" alt="American Express" width="50px" height="40px">
+                    <img src="assets/image/vi.png" alt="visa" width="50px" height="40px">
+                    <img src="assets/image/ma.jpg" alt="American Express" width="50px" height="40px">
+                    <img src="assets/image/bk.png" alt="American Express"width="50px" height="40px">
+                    <img src="assets/image/na.png" alt="American Express" width="50px" height="40px">
+
+                  </div>
+                  <div class="Acreddited footer_content">
+                    <div class="content_text">
+                      <span class="d-inline m-1"style="font-size: 12px; color:white;">Acreddited</span>
+                      <span class="d-inline m-1" style="font-size: 12px;color:white">Verified By:</span>
+                    </div>
+                    <div class="content_img">
+                      <img src="assets/image/ba.png" alt="basis" width="70px" height="50px">
+                      <img src="assets/image/co.png" alt="basis" width="70px" height="50px">
+                   </div>
+                  </div>
+                </div>
+
+                <div class="col-md-1 footer_content">
+                  <div class="messangerIcon">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                  </div>
+                  <div class="messangercontent">
+                    <span class="authorised" style="font-size: 10px;">Authorised By:</span>
+                    <img src="assets/image/co.png"  height="50px" width="70px" style="border-radius: 4px;">
+                  </div>
+                  
+              
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+    </div>
+
+<!---------------------script----------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
