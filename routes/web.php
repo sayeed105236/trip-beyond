@@ -54,3 +54,13 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/admin/system-settings', function () {
+    return view('backend.superadmin.pages.systemSettings');
+});

@@ -13,13 +13,19 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i class="fa-solid fa-house-user"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
-                <!-- <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-solid fa-house-user"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="/admin/system-settings"><i class="fa-solid fa-gears"></i><span class="menu-item text-truncate" data-i18n="System Settings">System Settings</span></a>
                     </li>
-                    <li class="active"><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i class="fa-brands fa-searchengin"></i><span class="menu-item text-truncate" data-i18n="SEO Settings">SEO Settings</span></a>
                     </li>
-                </ul> -->
+                    <!-- <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
+                    </li> -->
+                </ul>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-solid fa-file"></i><span class="menu-title text-truncate" data-i18n="Invoice">Page</span></a>
                 <ul class="menu-content">
