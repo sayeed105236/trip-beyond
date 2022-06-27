@@ -4,7 +4,7 @@
 
 <!-- BEGIN: Page Vendor JS-->
 <script src="{{URL::asset('app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
-<script src="{{URL::asset('app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
+
 <!-- END: Page Vendor JS-->
 
 <!-- BEGIN: Theme JS-->
@@ -16,6 +16,7 @@
 <script src="{{URL::asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
 <!-- END: Page JS-->
 
+
 <script>
     $(window).on('load', function() {
         if (feather) {
@@ -26,3 +27,5 @@
         }
     })
 </script>
+
+@stack('scripts')
