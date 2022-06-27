@@ -162,6 +162,10 @@
 </style>
 @endpush
 @section('content')
+<?php
+$settings= App\Models\Backend\SystemSettings::first();
+
+ ?>
 <div role="main" class="main">
     <div class="slider-container rev_slider_wrapper bg-color-grey-scale-1" style="max-height: 10px !importent">
         <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider
@@ -169,7 +173,7 @@
             style="max-height: 10px !important;">
             <ul>
                 <li data-transition="fade">
-                    <img src="{{URL::asset('user/img/banner-plan.jpeg') }}" alt="" data-bgposition="100% 100%"
+                    <img src="{{asset("storage/settings/$settings->banner")}}" alt="" data-bgposition="100% 100%"
                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
                     <div class="tp-caption font-weight-light ws-normal text-center"
                         data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":0,"split":"chars","splitdelay":0.00,"ease":"Power2.easeInOut"},{"delay":"wait","speed":0,"to":"y:[0%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
@@ -612,7 +616,7 @@
                             <div class="owl-carousel owl-theme stage-margin"
                                 data-plugin-options="{'items': 3, 'margin': 15, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': -155}">
 
-                                
+
                                 <div>
                                     <img class="img-fluid w3-round-xxlarge"
                                         src="{{URL::asset('user/img/projects/project.jpg') }}"
