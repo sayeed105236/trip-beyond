@@ -13,6 +13,10 @@
 </style>
 
 @endpush
+<?php
+$settings= App\Models\Backend\SystemSettings::first();
+
+ ?>
 <header id="header" class="header-transparent header-effect-shrink"
     data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
     <div class="header-body border-top-0 header-body-bottom-border" style="background-color: #0c254d">
@@ -22,9 +26,7 @@
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="{{ url('/') }}">
-                                <img alt="Porto" width="100%" height="40" src="{{
-                                        asset('user/img/tripbeyondlogo.png')
-                                    }}" />
+                                <img alt="Porto" width="100%" height="40" src="{{asset("storage/settings/$settings->frontend_logo")}}" />
                             </a>
                         </div>
                     </div>
