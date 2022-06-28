@@ -25,7 +25,7 @@ $settings= App\Models\Backend\SystemSettings::first();
                         <div id="tweet" class="twitter twitter-light" data-plugin-tweets
                             data-plugin-options="{'username': 'oklerthemes', 'count': 2}">
                             <p>
-                                <a class="text-color-light" href="">About</a>
+                                <a class="text-color-light" href="/about">About</a>
                             </p>
 
                             <p>

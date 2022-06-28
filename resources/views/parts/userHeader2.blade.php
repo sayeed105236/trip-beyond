@@ -48,7 +48,7 @@
                                         <a class="btn  font-weight-semibold tarekl-3 appear-animation text-dark tarek-h-a tb-o"
                                             style="background-color: #F6931D; height: 35px;"
                                             data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}" href=""
-                                            data-toggle="modal" data-target="#signInAgentModal">Login</a>
+                                            data-toggle="modal" data-target="#signInModal">Login</a>
 
 
 
