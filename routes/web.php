@@ -9,7 +9,7 @@ use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\FeaturedContentController;
 use App\Http\Controllers\Backend\AboutContentController;
 use App\Http\Controllers\Backend\AboutServiceController;
-  
+
 
 use App\Http\Controllers\Backend\SystemSettingsController;
 use App\Http\Controllers\Backend\GreatDealsController;
@@ -26,14 +26,14 @@ use App\Http\Controllers\Backend\GreatDealsController;
 |
 */
 
-  
+
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('/hotels', [HomepageController::class, 'hotels'])->name('hotels');
 Route::get('/packages', [HomepageController::class, 'packages'])->name('packages');
 Route::get('/notices', [HomepageController::class, 'viewNotices']);
 Route::get('/about', [HomepageController::class, 'about'])->name('about');
 
-  
+
 
 Auth::routes();
 
@@ -84,7 +84,7 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-<<<<<<< HEAD
+
 Route::get('/admin/system-settings', function () {
     return view('backend.superadmin.pages.systemSettings');
 });
@@ -120,5 +120,3 @@ Route::get('/admin/edit-why-content/{id}', [AboutServiceController::class, 'view
 Route::post('/admin/edit-why-content', [AboutServiceController::class, 'editWhy'])->name('edit-why-content');
 Route::get('/admin/delete-service-content/{id}', [AboutServiceController::class, 'deleteServiceContent']);
 Route::get('/admin/delete-why-content/{id}', [AboutServiceController::class, 'deleteWhyContent']);
-=======
->>>>>>> d0b93437df9f67292ab1660e2dc2c22af377599b
