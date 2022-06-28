@@ -1,11 +1,24 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="/"><span class="brand-logo">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{route('super.admin.home')}}"><span class="brand-logo">
+              <?php
+              $settings= App\Models\Backend\SystemSettings::first();
 
+               ?>
+               @if($settings->favicon != null )
+               <img src="{{asset("storage/settings/$settings->favicon")}}" alt="">
+
+               @else
               <img src="{{asset('images/icon.png')}}" alt="">
+              @endif
                     </span>
+                     @if($settings->backend_logo != null )
+                       <h2 class="brand-text">  <img src="{{asset("storage/settings/$settings->backend_logo")}}" alt=""> </h2>
+
+                     @else
                     <h2 class="brand-text">  <img src="{{asset('images/logo.png')}}" alt=""> </h2>
+                    @endif
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
         </ul>
@@ -15,9 +28,9 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-solid fa-house-user"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="/admin/system-settings"><i class="fa-solid fa-gears"></i><span class="menu-item text-truncate" data-i18n="System Settings">System Settings</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('system-settings')}}"><i class="fa-solid fa-gears"></i><span class="menu-item text-truncate" data-i18n="System Settings">System Settings</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i class="fa-brands fa-searchengin"></i><span class="menu-item text-truncate" data-i18n="SEO Settings">SEO Settings</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('great-deals')}}"><i class="fa-solid fa-dollar"></i><span class="menu-item text-truncate" data-i18n="SEO Settings">Great Deals</span></a>
                     </li>
                     <!-- <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
                     </li>

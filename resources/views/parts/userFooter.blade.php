@@ -1,10 +1,15 @@
+<?php
+$settings= App\Models\Backend\SystemSettings::first();
+
+ ?>
+
 <footer id="footer" class="border-top-0 mb-0" style="background-color: #000035">
     <div class="container pt-5">
         <div class="row pt-5">
             <div class="col-lg-2 mb-4 mb-lg-0">
                 <div class="col-md-12 ">
                     <a href="{{ url('/') }}" class="logo pr-0 pr-lg-3">
-                        <img alt="Trip Beyond" src="{{ URL::asset('user/img/tripbeyondlogo.png') }}"
+                        <img alt="Trip Beyond" src="{{asset("storage/settings/$settings->frontend_logo")}}"
                             class="opacity-7 bottom-4" height="33" />
                     </a>
                 </div>
@@ -103,13 +108,13 @@
                                 <a class="text-color-white" href="tel:1800-100-767-00">Help</a>
                             </p>
 
-                            <p class="text-color-white">01234567890</p>
+                            <p class="text-color-white">{{$settings->mobile}}</p>
 
                             <p class="text-color-white">
                                 <a class="text-color-white" href="mailto:">Email</a>
                             </p>
 
-                            <p class="text-color-white">demo@example.com</p>
+                            <p class="text-color-white">{{$settings->contact_email}}</p>
 
 
 
@@ -219,41 +224,41 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-12 text-center">
+            <div class="col-lg-4 col-md-12 text-center">
                 <p class="text-color-light pt-3">
-                    Copyrights: All rights reserved
+                  {{$settings->footer_copyright}}
                 </p>
             </div>
 
-            <div class="col-lg-6 col-md-12 text-center">
+            <div class="col-lg-4 col-md-12 text-center">
                 <ul class="
-                                              
+
                                                 social-icons
-                                                
+
                                             ">
                     <li class="social-icons-facebook">
-                        <a href="" target="_blank" title="Facebook"><i class="
+                        <a href=" {{$settings->facebook_url}}" target="_blank" title="Facebook"><i class="
                                                             fab
                                                             fa-facebook-f
                                                         "></i></a>
                     </li>
                     <li class="social-icons-twitter">
-                        <a href="" target="_blank" title="Twitter"><i
+                        <a href="{{$settings->twitter_url}}" target="_blank" title="Twitter"><i
                                 class="fab fa-twitter"></i></a>
                     </li>
                     <li class="social-icons-instagram">
-                        <a href="" target="_blank" title="Twitter"><i
+                        <a href="{{$settings->instagram_url}}" target="_blank" title="Twitter"><i
                                 class="fab fa-instagram"></i></a>
                     </li>
                     <li class="social-icons-linkedin">
-                        <a href="" target="_blank" title="Linkedin"><i class="
+                        <a href="{{$settings->linkedin_url}}" target="_blank" title="Linkedin"><i class="
                                                             fab
                                                             fa-linkedin-in
                                                         "></i></a>
                     </li>
 
                     <li class="social-icons-twitter">
-                        <a href="" target="_blank" title="Twitter"><i
+                        <a href="{{$settings->youtube_url}}" target="_blank" title="Twitter"><i
                                 class="fab fa-youtube"></i></a>
                     </li>
                 </ul>

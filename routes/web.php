@@ -1,14 +1,20 @@
-<?php 
-  
+<?php
+
 use Illuminate\Support\Facades\Route;
-  
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
+
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\FeaturedContentController;
 use App\Http\Controllers\Backend\AboutContentController;
 use App\Http\Controllers\Backend\AboutServiceController;
   
+
+use App\Http\Controllers\Backend\SystemSettingsController;
+use App\Http\Controllers\Backend\GreatDealsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +25,7 @@ use App\Http\Controllers\Backend\AboutServiceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
   
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('/hotels', [HomepageController::class, 'hotels'])->name('hotels');
@@ -27,35 +34,47 @@ Route::get('/notices', [HomepageController::class, 'viewNotices']);
 Route::get('/about', [HomepageController::class, 'about'])->name('about');
 
   
+
 Auth::routes();
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-  
+
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Super Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
-  
+
     Route::get('/super-admin/home', [HomeController::class, 'superAdminHome'])->name('super.admin.home');
+
+    //great deals
+    Route::get('/super-admin/great-deals', [GreatDealsController::class, 'index'])->name('great-deals');
+    Route::post('/super-admin/great-deals/store', [GreatDealsController::class, 'store'])->name('store-great-deals');
+    Route::post('/super-admin/great-deals/update', [GreatDealsController::class, 'update'])->name('update-great-deals');
+    Route::get('/super-admin/great-deals/delete/{id}', [GreatDealsController::class, 'delete']);
+
+    //system settings route
+
+    Route::get('/super-admin/system-settings', [SystemSettingsController::class, 'index'])->name('system-settings');
+    Route::post('/super-admin/update-system-settings', [SystemSettingsController::class, 'UpdateSettings'])->name('update-system-settings');
 });
-  
+
 /*------------------------------------------
---------------------------------------------
+-----------------------------------------
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-  
+
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
 
@@ -65,6 +84,7 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 */
+<<<<<<< HEAD
 Route::get('/admin/system-settings', function () {
     return view('backend.superadmin.pages.systemSettings');
 });
@@ -100,3 +120,5 @@ Route::get('/admin/edit-why-content/{id}', [AboutServiceController::class, 'view
 Route::post('/admin/edit-why-content', [AboutServiceController::class, 'editWhy'])->name('edit-why-content');
 Route::get('/admin/delete-service-content/{id}', [AboutServiceController::class, 'deleteServiceContent']);
 Route::get('/admin/delete-why-content/{id}', [AboutServiceController::class, 'deleteWhyContent']);
+=======
+>>>>>>> d0b93437df9f67292ab1660e2dc2c22af377599b
