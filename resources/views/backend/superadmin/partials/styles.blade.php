@@ -28,3 +28,10 @@
 <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/style.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <!-- END: Custom CSS-->
+
+<!-- include libraries(jQuery, bootstrap) -->
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+@stack('css')

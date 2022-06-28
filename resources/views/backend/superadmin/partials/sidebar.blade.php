@@ -29,7 +29,7 @@
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-solid fa-file"></i><span class="menu-title text-truncate" data-i18n="Invoice">Page</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">All Pages</span></a>
+                    <li><a class="d-flex align-items-center" href="/admin/edit-about"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">About Us</span></a>
                     </li>
                     <!-- <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
                     </li>
@@ -41,15 +41,17 @@
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-solid fa-newspaper"></i><span class="menu-title text-truncate" data-i18n="Invoice">News,Events,Notices</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">All Notice</span></a>
+                    <li><a class="d-flex align-items-center" href="/admin/notices"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">All Notice</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">All News</span></a>
+                    <li><a class="d-flex align-items-center" href=""><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">All News</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">All Event</span></a>
+                    <li><a class="d-flex align-items-center" href=""><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">All Event</span></a>
                     </li>
                     <!-- <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
                     </li> -->
                 </ul>
+            </li>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="/admin/features"><i class="fas fa-shopping-bag"></i><span class="menu-title text-truncate" data-i18n="File Manager">Featured Contents</span></a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-solid fa-compass"></i><span class="menu-title text-truncate" data-i18n="Invoice">Menu & Pages</span></a>
                 <ul class="menu-content">

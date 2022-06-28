@@ -579,18 +579,8 @@
         <div class="row ">
             <div class="col-md-12 mt-2">
                 <div class="text-center">
-                    <p> <small><span class="font-weight-bold w3-text-black"> News/Covid information:</span> Trip beyond
-                            is one
-                            of the fastest growing agencies based in Dhaka, Bangladesh which is certified by
-                            International
-                            Air Transport Association (IATA).
-                            This company Was established with the slogan "Go beyond your dreams." We are trully commited
-                            to
-                            providing you with quality services to make your tours easier, convented and hassle free.
-                            Aliquyam sadipscing sed eos labore
-                            voluptua at, ipsum diam sanctus ea kasd ea lorem, ut consetetur eirmod sea stet
-                            magna.</small></p>
-                    <a class="w3-white font-weight-bold" style="border-bottom: 1px solid #D0D0D0" href="">Red More</a>
+                    <p> <small><span class="font-weight-bold w3-text-black"> {{$notice_data->title}}</span> {!!$notice_data->notice!!}</small></p>
+                    <a class="w3-white font-weight-bold" style="border-bottom: 1px solid #D0D0D0" href="/notices">Read More</a>
                 </div>
             </div>
         </div>
@@ -819,80 +809,19 @@
 @endsection
 @push('extra')
 <div class="container p-5 m-3">
-
-
+    @foreach($feature_data as $feature)
     <div class="row">
         <div class="col">
             <div class="blog-posts">
 
-                <p class="black font-weight-bold" style="font-size: 18px;">Featured Flight Destinations</p>
+                <p class="black font-weight-bold" style="font-size: 18px;">{{$feature->title}}</p>
 
-                <p class="mini-p">It is not always easy to find flights that suit our budget and personal needs. With
-                    all the flight booking websites out there, it becomes even tougher to find the right one. It can be
-                    frustrating when you don’t find the desired flights after hours of searching. But Trip Beyond makes
-                    it really easy for you to fly with our exclusive services which helps you get your desired flights
-                    in one click.</p>
-
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="row">
-        <div class="col">
-            <div class="blog-posts">
-
-                <p class="black font-weight-bold" style="font-size: 18px;">Featured Tours & Tickets</p>
-
-                <p class="mini-p">We are a top-rated travel agency that provides customers with an extensive list of
-                    tours and air tickets. We help you travel to your favorite destinations across the globe, including
-                    London, Paris, Athens, New York City, Toronto,Madrid and more with ease and convenience. Trip Beyond
-                    also has a worldwide network of partners that allow them to offer tours</p>
-                <p class="mini-p">Tour packages are created with your desired itinerary in mind. You can choose from a
-                    variety of different tours for every type of traveler. We offer everything from backpacking trips to
-                    luxury vacations, or whatever you want!</p>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="blog-posts">
-
-                <p class="black font-weight-bold" style="font-size: 18px;">Save on Travel with tripbeyond.com</p>
-
-                <p class="mini-p">Trip Beyond is a company that offers affordable holiday packages to places all over
-                    the world. Our goal is to find the perfect trip for our clients, at the best prices. We Offer you
-                    holiday packages that are cheaper than what you would find anywhere else online.</p>
-
-                <p class="mini-p">Thinking of your holidays but not sure where to start? Check out Trip beyond, we have
-                    holiday packages to suit any budget and for all kinds of people.</p>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="row">
-        <div class="col">
-            <div class="blog-posts">
-
-                <p class="black font-weight-bold" style="font-size: 18px;">Featured Hotel Destinations</p>
-
-                <p class="mini-p">Trip Beyond is an online portal that lets you explore and book some of the best hotels
-                    in the world. We provide a variety of services and facilities to its customers.
-                </p>
-                <p class="mini-p">Our dedicated team in Trip Beyond has selected and partnered with leading hotel brands
-                    to help their customers find their desired hotels in one click. Moreover, we also provide some
-                    exclusive offers for our valued customers.
-                </p>
+                <p class="mini-p">{!!$feature->content!!}</p>
 
             </div>
         </div>
     </div>
+    @endforeach
 </div>
 @endpush
 @push('js')
