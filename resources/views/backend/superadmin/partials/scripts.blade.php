@@ -16,6 +16,15 @@
 <script src="{{URL::asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
 <!-- END: Page JS-->
 
+<script src="{{asset('app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js')}}"></script>
+<script>
+$(document).ready( function () {
+$('#myTable').DataTable();
+} );
+</script>
 
 <script>
     $(window).on('load', function() {
@@ -26,6 +35,7 @@
             });
         }
     })
+
 </script>
 
 @stack('scripts')

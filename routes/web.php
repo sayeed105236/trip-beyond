@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Backend\SystemSettingsController;
+use App\Http\Controllers\Backend\GreatDealsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,12 @@ All Super Admin Routes List
 Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
 
     Route::get('/super-admin/home', [HomeController::class, 'superAdminHome'])->name('super.admin.home');
+
+    //great deals
+    Route::get('/super-admin/great-deals', [GreatDealsController::class, 'index'])->name('great-deals');
+    Route::post('/super-admin/great-deals/store', [GreatDealsController::class, 'store'])->name('store-great-deals');
+    Route::post('/super-admin/great-deals/update', [GreatDealsController::class, 'update'])->name('update-great-deals');
+    Route::get('/super-admin/great-deals/delete/{id}', [GreatDealsController::class, 'delete']);
 
     //system settings route
 

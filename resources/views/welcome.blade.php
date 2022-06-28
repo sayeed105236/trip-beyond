@@ -612,27 +612,32 @@ $settings= App\Models\Backend\SystemSettings::first();
                         </div>
 
                         <div class="lightbox carousel-width "
-                            data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
+                          >
                             <div class="owl-carousel owl-theme stage-margin"
                                 data-plugin-options="{'items': 3, 'margin': 15, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': -155}">
-
-
+                                <?php
+                              $deals = App\Models\Backend\Deals::where('status',1)->orderBy('id','desc')->get();
+                                 ?>
+                                 @if($deals != null)
+                                 @foreach($deals as $row)
                                 <div>
                                     <img class="img-fluid w3-round-xxlarge"
-                                        src="{{URL::asset('user/img/projects/project.jpg') }}"
-                                        style="height: 195px; width:342px; position: relative" alt="Project Image">
+                                        src="{{asset("storage/deals/$row->image")}}"
+                                        style="height: 195px; width:342px; position: relative" alt="{{$row->title}}">
                                     <div style="position: absolute; z-index: 99;top:0" class="p-5 pb-3">
-                                        <p> <span class="w3-text-white  font-weight-bold" style="font-size: 22px;">abcd <br></span> </p>
-                                        <div class="w3-text-orange w3-large">234 <br>
+                                        <p> <span class="w3-text-white  font-weight-bold" style="font-size: 22px;">{{$row->title}} <br></span> </p>
+                                        <div class="w3-text-orange w3-large">{{$row->description}}<br>
                                             <div class="">
-                                                <a href=""
-                                                    class="btn w3-text-white w3-large">Plan it now <i
+                                                <a target="_blank" href="{{$row->button_link}}"
+                                                    class="btn w3-text-white w3-large"> {{$row->button_title}} <i
                                                         class="fas fa-arrow-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
+                                @endforeach
+                                @endif
 
 
                                 {{-- <div>
@@ -778,7 +783,7 @@ $settings= App\Models\Backend\SystemSettings::first();
         </div>
 
     </div>
-    <div class="container py-2 pt-4">
+    <!-- <div class="container py-2 pt-4">
         <img src="{{URL::asset('user/img/projects/project.jpg') }}" alt="">
         <div class="row">
             <div class="col">
@@ -817,7 +822,7 @@ $settings= App\Models\Backend\SystemSettings::first();
 
         </div>
 
-    </div>
+    </div> -->
 </div>
 </div>
 @endsection
