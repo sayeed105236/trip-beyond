@@ -30,7 +30,7 @@
                 <ul class="menu-content">
                     <li><a class="d-flex align-items-center" href="{{route('system-settings')}}"><i class="fa-solid fa-gears"></i><span class="menu-item text-truncate" data-i18n="System Settings">System Settings</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i class="fa-brands fa-searchengin"></i><span class="menu-item text-truncate" data-i18n="SEO Settings">SEO Settings</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('great-deals')}}"><i class="fa-solid fa-dollar"></i><span class="menu-item text-truncate" data-i18n="SEO Settings">Great Deals</span></a>
                     </li>
                     <!-- <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
                     </li>
