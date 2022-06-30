@@ -149,6 +149,9 @@
     <div class="body tarek-add-bk">
         @include('parts.userHeader2')
         @yield('content')
+        <?php
+          $banner=App\Models\Backend\AppBanner::first();
+         ?>
         <div class="container pt-5 tarek-add-bk">
             <div class="row text-center ">
                 <div class="col-md-12 ">
@@ -156,8 +159,8 @@
                         <article class="post post-medium btn btn-rounded ">
                             <div class="post-image ">
                                 <a href="# ">
-                                    <img src="{{ asset('user/img/ios.png') }} "
-                                        class="img-fluid img-thumbnail-no-borders rounded-5 border-curve " alt=" " />
+                                    <img src="{{asset("storage/app-banner/$banner->banner")}}"
+                                        class="img-fluid img-thumbnail-no-borders rounded-5 border-curve " alt="Download-App-Banner" />
                                 </a>
                             </div>
 

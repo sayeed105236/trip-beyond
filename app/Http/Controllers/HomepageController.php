@@ -7,6 +7,7 @@ use App\Models\Backend\Notice;
 use App\Models\Backend\FeaturedContent;
 use App\Models\Backend\AboutContent;
 use App\Models\Backend\AboutService;
+use App\Models\Backend\Term;
 use DB;
 
 class HomepageController extends Controller
@@ -38,5 +39,11 @@ class HomepageController extends Controller
         $count_services = count($services);
         $whys=AboutService::where('is_service', '=', '0')->get();
         return view('about', compact('data', 'services', 'whys', 'count_services'));
+    }
+    public function terms()
+    {
+      $terms=Term::get();
+      $count_terms = count($terms);
+      return view('terms-and-conditions', compact('terms', 'count_terms'));
     }
 }

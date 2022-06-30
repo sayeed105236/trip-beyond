@@ -14,6 +14,11 @@ use App\Http\Controllers\Backend\AboutServiceController;
 use App\Http\Controllers\Backend\SystemSettingsController;
 use App\Http\Controllers\Backend\GreatDealsController;
 
+use App\Http\Controllers\Backend\AppBannerController;
+
+use App\Http\Controllers\Backend\TermController;
+use App\Http\Controllers\Backend\CompanyController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +37,7 @@ Route::get('/hotels', [HomepageController::class, 'hotels'])->name('hotels');
 Route::get('/packages', [HomepageController::class, 'packages'])->name('packages');
 Route::get('/notices', [HomepageController::class, 'viewNotices']);
 Route::get('/about', [HomepageController::class, 'about'])->name('about');
+Route::get('/terms', [HomepageController::class, 'terms']);
 
 
 
@@ -120,3 +126,24 @@ Route::get('/admin/edit-why-content/{id}', [AboutServiceController::class, 'view
 Route::post('/admin/edit-why-content', [AboutServiceController::class, 'editWhy'])->name('edit-why-content');
 Route::get('/admin/delete-service-content/{id}', [AboutServiceController::class, 'deleteServiceContent']);
 Route::get('/admin/delete-why-content/{id}', [AboutServiceController::class, 'deleteWhyContent']);
+
+Route::get('/admin/edit-app-banner', [AppBannerController::class, 'index']);
+Route::post('/admin/edit-app-banner', [AppBannerController::class, 'updateBanner'])->name('edit-app-banner');
+
+Route::get('/admin/terms', [TermController::class, 'index'])->name('term-index');
+Route::get('/admin/new-term', function () {
+    return view('backend.superadmin.pages.terms.new-term');
+});
+Route::post('/admin/new-term', [TermController::class, 'storeTerm'])->name('new-term');
+Route::get('/admin/edit-terms/{id}', [TermController::class, 'viewEditTerm']);
+Route::post('/admin/edit-term', [TermController::class, 'editTerm'])->name('edit-term');
+Route::get('/admin/delete-term/{id}', [TermController::class, 'deleteTerm']);
+
+Route::get('/admin/companies', [CompanyController::class, 'index'])->name('companies');
+Route::get('/admin/active-companies', [CompanyController::class, 'indexActive'])->name('active-companies');
+Route::get('/admin/inactive-companies', [CompanyController::class, 'indexInactive'])->name('inactive-companies');
+Route::get('/admin/new-company', [CompanyController::class, 'newCompany'])->name('new-company');
+Route::post('/admin/new-company', [CompanyController::class, 'storeCompany'])->name('store-new-company');
+Route::get('/admin/edit-company/{id}', [CompanyController::class, 'editCompany']);
+Route::post('/admin/edit-company', [CompanyController::class, 'updateCompany'])->name('edit-company');
+Route::get('/admin/delete-company/{id}', [CompanyController::class, 'deleteCompany']);
