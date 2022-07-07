@@ -10,17 +10,19 @@ class Company extends Model
     use HasFactory;
     protected $fillable = [
       'logo',
-      'user',
-      'title',
-      'description',
-      'username',
-      'commission',
-      'mobile',
-      'email',
-      'address',
+      'manager',
+      'type',
+      'name',
+      'address_l1',
+      'address_l2',
+      'city',
       'zip',
       'country',
-      'is_active',
+      'email',
+      'phone_code',
+      'phone',
+      'preferred_currency',
       'status',
+      'does_agree'
     ];
 }

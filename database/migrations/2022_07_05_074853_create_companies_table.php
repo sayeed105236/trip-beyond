@@ -16,19 +16,22 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('logo')->nullable();
-            $table->bigInteger('user')->unsigned();
-            $table->foreign('user')->references('id')->on('users');
-            $table->string('title');
-            $table->longText('description');
-            $table->string('username')->unique();
-            $table->double('commission');
-            $table->string('mobile');
-            $table->string('email');
-            $table->longText('address');
+            $table->bigInteger('manager')->unsigned();
+            $table->foreign('manager')->references('id')->on('users');
+            $table->bigInteger('type')->unsigned();
+            $table->foreign('type')->references('id')->on('company_types');
+            $table->string('name');
+            $table->string('address_l1');
+            $table->string('address_l2')->nullable();
+            $table->string('city');
             $table->string('zip');
             $table->string('country');
-            $table->boolean('is_active')->default(0);
-            $table->boolean('status');
+            $table->string('email')->unique();
+            $table->string('phone_code');
+            $table->string('phone')->unique();
+            $table->string('preferred_currency');
+            $table->string('status');
+            $table->boolean('does_agree');
             $table->timestamps();
         });
     }

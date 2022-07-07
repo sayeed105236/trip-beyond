@@ -1,4 +1,4 @@
-@push('css')
+@push('css') crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     #header .header-body {
         display: flex;
@@ -26,7 +26,7 @@ $settings= App\Models\Backend\SystemSettings::first();
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="{{ url('/') }}">
-                                <img alt="Trip Beyond" width="100%" height="40" src="{{asset("storage/settings/$settings->frontend_logo")}}" />
+                                <img alt="Porto" width="100%" height="40" src="{{asset("storage/settings/$settings->frontend_logo")}}" />
                             </a>
                         </div>
                     </div>
@@ -66,11 +66,14 @@ $settings= App\Models\Backend\SystemSettings::first();
                                                 color: white;
                                                 font-size: 11px;
                                             " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}" href="">Contact us</a>
-                                        <a class="btn appear-animation" style="
-                                                color: white;
-                                                font-size: 11px;
-                                            " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}"
-                                            href="" data-toggle="modal" data-target="#defaultModal">Register</a>
+
+                                            <p class="btn appear-animation" style="
+                                                    color: white;
+                                                    font-size: 11px;
+                                                " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}"><i class="fa-solid fa-user"></i> Welcome {{Auth::user()->name}}</p>
+
+
+
 
                                         <a class="btn appear-animation" style="
                                                 color: white;
@@ -94,7 +97,7 @@ $settings= App\Models\Backend\SystemSettings::first();
                                                 background-color: #f6931d;
                                                 height: 35px;
                                             " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}"
-                                            href="" data-toggle="modal" data-target="#signInModal">Login</a>
+                                            href="" data-toggle="modal" data-target="#companyModal">Register a Company</a>
 
                                         <a class="
                                                 ml-2
@@ -110,6 +113,19 @@ $settings= App\Models\Backend\SystemSettings::first();
                                                 background-color: #f6931d;
                                             " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}"
                                             href="tel:01234567890"><i class="fas fa-phone-alt"></i></a>
+                                            <div class="">
+                                              <a class="btn appear-animation" style="
+                                                      color: white;
+                                                      font-size: 11px;
+                                                  " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}" href="{{ route('logout') }}"
+                                              onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                              {{ __('Logout') }}
+                                              </a>
+                                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                  @csrf
+                                              </form>
+                                            </div>
                                     </ul>
                                 </nav>
                             </div>
