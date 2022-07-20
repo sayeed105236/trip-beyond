@@ -42,28 +42,18 @@ class UserController extends Controller
     $req->phone_code= $request->phone_code;
     $req->phone= $request->phone;
     $req->preferred_currency= $request->preferred_currency;
-    $document =$request->file('document');
-    $filename=null;
-    if ($document) {
-        $filename = time() . $document->getClientOriginalName();
-
-        Storage::disk('public')->putFileAs(
-            'company-documents/',
-            $document,
-            $filename
-        );
-
-    }
-    $req->document= $filename;
     $req->status= $request->status;
     $req->does_agree= $request->does_agree;
     $req->save();
+
+    $user= User::find($request->manager);
+    $user->type=2;
+    $user->save();
+
     $notification=array(
       'message'=>'New company has been added successfully!!!',
       'alert-type'=>'success'
     );
-    $companies=Company::get();
-    $status="All";
-    return redirect('/home')->with($notification);
+    return redirect('/manager/home')->with($notification);
   }
 }

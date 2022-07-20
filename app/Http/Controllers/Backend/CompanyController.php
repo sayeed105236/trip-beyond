@@ -96,7 +96,8 @@ class CompanyController extends Controller
       $company=Company::where('id', $id)->first();
       $user=User::where('id', $id1)->first();
       $type=CompanyType::where('id', $id2)->first();
-      return view('backend.superadmin.pages.company.company-details', compact('company','user','type'));
+      $documents=CompanyDocument::where('id', $id)->get();
+      return view('backend.superadmin.pages.company.company-details', compact('company','user','type','documents'));
     }
 
     public function editCompany($id)

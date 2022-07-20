@@ -45,7 +45,7 @@
             <div class="col-6">
               <h3>Company Information</h3>
               <p><b>Company Type:</b> {{$type->type}}<br></p>
-              <p><b>Address:</b> {{$company->address_l1}}{{$company->address_l2}}-{{$company->zip}}, {{$company->country}}</p>
+              <p><b>Address:</b> {{$company->address_l1}}{{$company->address_l2}}, {{$company->city}}-{{$company->zip}}, {{$company->country}}</p>
               <p><b>Email:</b> {{$company->email}}</p>
               <p><b>Mobile:</b> {{$company->phone_code}}{{$company->phone}}</p>
               <p><b>Preferred Currency:</b> {{$company->preferred_currency}}</p>
@@ -58,10 +58,12 @@
             </div>
             <div class="col-6">
               <div class="d-inline-block">
+                  @foreach($documents as $document)
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#info">Trade License</button>
+                  <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#info">{{$document->type}}</button>
                   <!-- Modal -->
                   @include('backend.superadmin.pages.company.companyModal')
+                  @endforeach
               </div>
             </div>
           </div>

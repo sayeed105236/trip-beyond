@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('company_documents', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('company')->unsigned();
+            $table->foreign('company')->references('id')->on('companies');
+            $table->bigInteger('type')->unsigned();
+            $table->foreign('type')->references('id')->on('company_document_types');
+            $table->string('document');
+            $table->boolean('is_verified')->default(0);
             $table->timestamps();
         });
     }

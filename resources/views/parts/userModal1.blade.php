@@ -18,16 +18,16 @@
                                 <strong>Error!</strong> There was an error.
                                 <span class="mail-error-message text-1 d-block"></span>
                             </div> --}}
-                            <input type="hidden" name="manager" value="{{Auth::user()->name}}">
+                            <input type="hidden" name="manager" value="{{Auth::user()->id}}">
                             <div class="row">
                               <div class="col-lg-4 col-md-12">
                                 <div class="form-row">
                                   <div class="form-group col">
                                     <label for="">Company Type</label>
-                                    <select class="" name="type">
+                                    <select class="form-control btn-rounded" style="border: 1px solid black; height: 3.7em" name="type">
                                       <option value="">Select</option>
                                       @foreach($types as $type)
-                                      <option value="{{$type->type}}">{{$type->type}}</option>
+                                      <option value="{{$type->id}}">{{$type->type}}</option>
                                       @endforeach
                                     </select>
                                   </div>
@@ -81,7 +81,7 @@
                                 <div class="form-row">
                                   <div class="form-group col">
                                     <label for="">Country</label>
-                                    <select class="" name="country">
+                                    <select class="form-control btn-rounded" style="border: 1px solid black; height: 3.7em" name="country">
                                       <option value="">Select</option>
                                       @foreach($countries as $country)
                                       <option value="{{$country->country}}">{{$country->country}}</option>
@@ -104,7 +104,7 @@
                                 <div class="form-row">
                                   <div class="form-group col">
                                     <label for="">Code</label>
-                                    <select class="" name="phone_code">
+                                    <select class="form-control btn-rounded" style="border: 1px solid black; height: 3.7em" name="phone_code">
                                       <option value="">Select</option>
                                       @foreach($countries as $country)
                                       <option value="{{$country->phone_code}}">{{$country->phone_code}}</option>
@@ -123,11 +123,12 @@
                               </div>
                             </div>
                             <div class="row">
+                              <div class="col-lg-2 col-md-12"></div>
                               <div class="col-lg-4 col-md-12">
                                 <div class="form-row">
                                   <div class="form-group col">
                                     <label for="">Preferred Currency</label>
-                                    <select class="" name="preferred_currency">
+                                    <select class="form-control btn-rounded" style="border: 1px solid black; height: 3.7em" name="preferred_currency">
                                       <option value="">Select</option>
                                       @foreach($countries as $country)
                                       <option value="{{$country->currency}}">{{$country->currency}}</option>
@@ -144,14 +145,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-lg-4 col-md-12">
-                                <div class="form-row">
-                                  <div class="form-group col">
-                                    <label for="">Document</label>
-                                    <input type="file" style="border: 1px solid black; height: 3.7em" value=""class="form-control btn-rounded" name="document" placeholder="Document..." autofocus>
-                                  </div>
-                                </div>
-                              </div>
+                              <div class="col-lg-2 col-md-12"></div>
                             </div>
                             <input type="hidden" name="status" value="Pending">
                             <input type="hidden" name="does_agree" value="1">

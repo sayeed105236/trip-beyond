@@ -19,13 +19,26 @@
                                     <form class="form" action="{{route('store-new-company')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
-                                            <div class="col-md-6 col-12">
+                                            <div class="col-md-2 col-12">
                                                 <div class="form-group">
                                                     <label for="">Company Logo</label>
                                                     <input type="file" id="image" class="form-control" style="border: 1px solid black; height: 3.7em" name="logo" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-12">
+                                            <div class="col-lg-3 col-md-12">
+                                              <div class="form-row">
+                                                <div class="form-group col">
+                                                  <label for="">Company Type</label>
+                                                  <select class="form-control" style="border: 1px solid black; height: 3.7em" name="type">
+                                                    <option value="">Select</option>
+                                                    @foreach($types as $type)
+                                                    <option value="{{$type->id}}">{{$type->type}}</option>
+                                                    @endforeach
+                                                  </select>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-3 col-12">
                                                 <div class="form-group">
                                                     <label for="">Manager</label>
                                                     <select class="form-control" style="border: 1px solid black; height: 3.7em" name="manager">
@@ -37,29 +50,14 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                          <div class="col-lg-4 col-md-12">
-                                            <div class="form-row">
-                                              <div class="form-group col">
-                                                <label for="">Company Type</label>
-                                                <select class="form-control" style="border: 1px solid black; height: 3.7em" name="type">
-                                                  <option value="">Select</option>
-                                                  @foreach($types as $type)
-                                                  <option value="{{$type->id}}">{{$type->type}}</option>
-                                                  @endforeach
-                                                </select>
+                                            <div class="col-lg-4 col-md-12">
+                                              <div class="form-row">
+                                                <div class="form-group col">
+                                                  <label for="">Company Name</label>
+                                                  <input type="text" style="border: 1px solid black; height: 3.7em" value="" data-msg-required="Please enter company name." class="form-control btn-rounded" name="name" placeholder="Company Name..."  required autocomplete="name" autofocus>
+                                                </div>
                                               </div>
                                             </div>
-                                          </div>
-                                          <div class="col-lg-8 col-md-12">
-                                            <div class="form-row">
-                                              <div class="form-group col">
-                                                <label for="">Company Name</label>
-                                                <input type="text" style="border: 1px solid black; height: 3.7em" value="" data-msg-required="Please enter company name." class="form-control btn-rounded" name="name" placeholder="Company Name..."  required autocomplete="name" autofocus>
-                                              </div>
-                                            </div>
-                                          </div>
                                         </div>
                                         <div class="row">
                                           <div class="col-lg-6 col-md-12">
@@ -142,6 +140,7 @@
                                           </div>
                                         </div>
                                         <div class="row">
+                                          <div class="col-lg-2 col-md-12"></div>
                                           <div class="col-lg-4 col-md-12">
                                             <div class="form-row">
                                               <div class="form-group col">
@@ -168,14 +167,7 @@
                                               </div>
                                             </div>
                                           </div>
-                                          <div class="col-lg-4 col-md-12">
-                                            <div class="form-row">
-                                              <div class="form-group col">
-                                                <label for="">Trade License</label>
-                                                <input type="file" style="border: 1px solid black; height: 3.7em" value=""class="form-control btn-rounded" name="trade_license" placeholder="Trade Licence..." autofocus>
-                                              </div>
-                                            </div>
-                                          </div>
+                                          <div class="col-lg-2 col-md-12"></div>
                                         </div>
                                         <input type="hidden" name="does_agree" value="1">
                                         <div class="row" style="text-align:center">
