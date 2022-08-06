@@ -54,6 +54,7 @@ class HomeController extends Controller
      */
     public function managerHome()
     {
-        return view('backend.business.pages.index');
+      // $company=Company::where('manager', Auth::id())->first();
+      return view('backend.business.pages.index');
     }
 }

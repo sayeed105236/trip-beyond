@@ -1,3 +1,6 @@
+<?php
+$settings= App\Models\Backend\SystemSettings::first();
+?>
 <header id="header"
     data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 0}">
     <div class="header-body border-top-0" style="background-color: #0C254D;">
@@ -59,7 +62,6 @@
                                     </ul>
                                 </nav>
                             </div>
-
                             <button class="btn header-btn-collapse-nav" data-toggle="collapse"
                                 data-target=".header-nav-main nav"><i class="fa fa-bars"></i></button>
                         </div>

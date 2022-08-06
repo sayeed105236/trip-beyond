@@ -47,12 +47,15 @@ $settings= App\Models\Backend\SystemSettings::first();
                                 <nav class="collapse pt-3">
                                     <ul class="nav nav-pills" id="mainNav">
                                         <a class="
-                                                btn btn-rounded
-                                                font-weight-semibold
-                                                appear-animation
+                                        btn btn-rounded
+                                        font-weight-semibold
+                                        ml-3
+                                        appear-animation
+                                        text-dark
                                             " style="
-                                                border: 2px solid white;
                                                 color: white;
+                                                height: 35px;
+                                                background-color: #f6931d;
                                                 height: 35px;
                                             " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}"
                                             href="#"><small>USD
@@ -62,13 +65,25 @@ $settings= App\Models\Backend\SystemSettings::first();
                                                         pl-2
                                                     "></i></small></a>
 
-                                        <a class="btn appear-animation" style="
+                                        <a class="btn btn-rounded
+                                        font-weight-semibold
+                                        ml-3
+                                        appear-animation
+                                        text-dark" style="
                                                 color: white;
                                                 font-size: 11px;
+                                                background-color: #f6931d;
+                                                height: 35px;
                                             " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}" href="">Contact us</a>
-                                        <a class="btn appear-animation" style="
+                                        <a class="btn btn-rounded
+                                        font-weight-semibold
+                                        ml-3
+                                        appear-animation
+                                        text-dark" style="
                                                 color: white;
                                                 font-size: 11px;
+                                                background-color: #f6931d;
+                                                height: 35px;
                                             " data-appear-animation="fadeIn" data-plugin-options="{'accY': 100}"
                                             href="" data-toggle="modal" data-target="#defaultModal">Register</a>
 

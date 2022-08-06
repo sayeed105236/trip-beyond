@@ -173,4 +173,22 @@ class CompanyController extends Controller
       $status="All";
       return redirect('/admin/companies')->with(compact('companies','status'))->with($notification);
     }
+    public function activateCompany($id)
+    {
+      $req= Company::find($id);
+      $req->status = "Active";
+      $req->save();
+      $companies=Company::get();
+      $status="All";
+      return redirect('/admin/companies')->with(compact('companies','status'));
+    }
+    public function deactivateCompany($id)
+    {
+      $req= Company::find($id);
+      $req->status = 'Inactive';
+      $req->save();
+      $companies=Company::get();
+      $status="All";
+      return redirect('/admin/companies')->with(compact('companies','status'));
+    }
 }

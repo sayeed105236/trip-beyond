@@ -1,3 +1,4 @@
+
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
@@ -64,7 +65,7 @@
           </li>
           <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i class="fa-solid fa-building"></i><span class="menu-title text-truncate" data-i18n="Company">Company</span></a>
               <ul class="menu-content">
-                <li><a class="d-flex align-items-center" href=""><i class="fa-solid fa-file"></i><span class="menu-item text-truncate" data-i18n="Company Details">Company Details</span></a>
+                <li><a class="d-flex align-items-center" href="/manager/company-detail/{{Auth::user()->id}}"><i class="fa-solid fa-file"></i><span class="menu-item text-truncate" data-i18n="Company Details">Company Details</span></a>
                 </li>
                 <li><a class="d-flex align-items-center" href=""><i class="fa-solid fa-file"></i><span class="menu-item text-truncate" data-i18n="Edit Details">Edit Details</span></a>
                 </li>

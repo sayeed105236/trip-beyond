@@ -53,7 +53,7 @@
                     <div class="col-3">
                       <a href="/admin/company-detail/{{$company->id}}/{{$company->manager}}/{{$company->type}}" alt="More Info"><i class="fa-solid fa-circle-info"></i></a>
                     </div>
-                    <div class="col-3">
+                    <!-- <div class="col-3">
                       <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i></a>
                     </div>
                     <div class="col-3">
@@ -61,7 +61,26 @@
                     </div>
                     <div class="col-3">
                       <a href="/admin/delete-company/{{$company->id}}"><i class="fa-solid fa-trash"></i></a>
-                    </div>
+                    </div> -->
+                    <!-- <div class="col-9"> -->
+                      @if($company->status=='Inactive')
+                      <div class="col-9">
+                        <a href="/admin/activate-company/{{$company->id}}"><i class="fa-solid fa-check"></i></a>
+                      </div>
+                      @elseif($company->status=='Pending')
+                      <div class="col-4">
+                        <a href="/admin/activate-company/{{$company->id}}"><i class="fa-solid fa-check"></i></a>
+                      </div>
+                      <!-- <div class="col-1"></div> -->
+                      <div class="col-4">
+                        <a href="/admin/deactivate-company/{{$company->id}}"><i class="fa-solid fa-xmark"></i></a>
+                      </div>
+                      @else
+                      <div class="col-9">
+                        <a href="/admin/deactivate-company/{{$company->id}}"><i class="fa-solid fa-xmark"></i></a>
+                      </div>
+                      @endif
+                    <!-- </div> -->
                   </div>
                 </td>
               </tr>

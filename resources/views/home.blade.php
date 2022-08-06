@@ -185,7 +185,7 @@ $settings= App\Models\Backend\SystemSettings::first();
                             <div class="col-md-12 d-flex justify-content-around pb-3" style="font-size: 1em;">
                                 <a href="" class=" w3-text-white d-flex"><i class="icon-plane icons"
                                         style="color: #F6931D"></i> Flights</a>
-                                <a href="/hotels" class=" w3-text-white d-flex"><i
+                                <a href="#" class=" w3-text-white d-flex"><i
                                         class="fas fa-hotel d-inline"></i>
                                     Hotels</a>
                                 <a href="/packages" class=" w3-text-white d-flex"> <i

@@ -185,7 +185,7 @@ $settings= App\Models\Backend\SystemSettings::first();
                             <div class="col-md-12 d-flex justify-content-around pb-3" style="font-size: 1em;">
                                 <a href="" class=" w3-text-white d-flex"><i class="icon-plane icons"
                                         style="color: #F6931D"></i> Flights</a>
-                                <a href="/hotels" class=" w3-text-white d-flex"><i
+                                <a href="#" class=" w3-text-white d-flex"><i
                                         class="fas fa-hotel d-inline"></i>
                                     Hotels</a>
                                 <a href="/packages" class=" w3-text-white d-flex"> <i
@@ -680,88 +680,114 @@ $settings= App\Models\Backend\SystemSettings::first();
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-8">
+                          <div class="col-lg-8">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="blog-posts">
+                                  <article class="post post-medium btn btn-rounded ">
+                                    <div class="post-image tarek-position">
+                                      <a href="#">
+                                        <img src="{{URL::asset('user/img/sea_view.jpg') }}" class="img-fluid img-thumbnail-no-borders rounded-5 border-curve" alt="Promotional Ads" style="height: 300px;" />
+                                      </a>
+                                      <div class="tarek-topleft">
+                                        <button class="btn btn-tarek2 btn-rounded px-3">Promotion</button>
+                                      </div>
+                                    </div>
+                                  </article>
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <div class="row pl-5 pt-3">
+                                  <p class="w3-text-black font-weight-bold">Last minute Summer Trip</p>
+                                </div>
+                                <div class="row pl-4">
+                                  <div class="col-md-9">
+                                    <p><small>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</small></p>
+                                  </div>
+                                  <div class="col-md-3" style="height: 40px">
+                                    <a class="btn btn-tarek btn-block btn-lg text-dark font-weight-bold btn-rounded" href="">Let's go</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 pt-3">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="blog-posts">
+                                  <article class="post post-medium btn btn-rounded ">
+                                    <div class="post-image tarek-position">
+                                      <a href="#">
+                                        <img src="{{URL::asset('user/img/promotion2.jpg') }}" class="img-fluid img-thumbnail-no-borders rounded-5 border-curve" alt="Promotional Ads 2" style="height: 300px;" />
+                                      </a>
+                                      <div class="tarek-topleft">
+                                        <button class="btn btn-tarek2 btn-rounded px-3">Promotion</button>
+                                      </div>
+                                    </div>
+                                  </article>
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <div class="row pl-5 pt-3">
+                                  <p class="w3-text-black font-weight-bold">Flying from Delhi-London?</p>
+                                </div>
+                                <div class="row pl-4">
+                                  <div class="col-md-9">
+                                    <p><small>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</small></p>
+                                  </div>
+                                  <div class="col-md-3" style="height: 40px">
+                                    <a class="btn btn-tarek btn-block btn-lg text-dark font-weight-bold btn-rounded" href="">Book Now</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                            <!-- <div class="col-lg-4 pt-3">
+
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="blog-posts">
+                                      <div class="blog-posts">
+                                        <article class="post post-medium btn btn-rounded ">
+                                          <div class="post-image tarek-position">
+                                              <a href="">
+                                                  <img src="{{URL::asset('user/img/promotion2.jpg') }}"
+                                                      class="img-fluid img-thumbnail-no-borders rounded-5 border-curve" alt="Promotional Ads 2" />
+                                              </a>
+                                              <div class="tarek-topleft">
+                                                  <button class="btn btn-tarek2 btn-rounded px-3">Promotion</button>
 
-                                            <article class="post post-medium btn btn-rounded ">
-                                                <div class="post-image tarek-position">
-                                                    <a href="#">
-                                                        <img src="{{URL::asset('user/img/sea_view.jpg') }}"
-                                                            class="img-fluid img-thumbnail-no-borders rounded-5 border-curve"
-                                                            alt="Promotional Ads" />
-                                                    </a>
-                                                    <div class="tarek-topleft">
-                                                        <button
-                                                            class="btn btn-tarek2 btn-rounded px-3">Promotion</button>
-
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
+                                              </div>
+                                          </div>
+                                        </article>
+                                      </div>
                                     </div>
-
                                     <div class="col-md-12">
-                                        <div class="row pl-5 pt-3">
-                                            <p class="w3-text-black font-weight-bold">Last minute Summer Trip</p>
-                                        </div>
-                                        <div class="row pl-4">
-                                            <div class="col-md-9">
-                                                <p><small>It is a long established fact that a reader will be distracted
-                                                        by the readable content of a page
-                                                        when looking at its layout.</small></p>
-                                            </div>
-                                            <div class="col-md-3" style="height: 40px">
-                                                <a class="btn btn-tarek btn-block btn-lg text-dark font-weight-bold btn-rounded"
-                                                    href="">Let's go</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                      <div class="container">
+                                          <div class="row pt-5">
+                                              <p class="w3-text-black font-weight-bold">Flying from Delhi-London?</p>
+                                              <div class="row pt-2">
+                                                  <div class="col-md-8">
+                                                      <p><small>It is a long established fact that a
+                                                              reader will be distracted by the r
+                                                              eadable content of a page when
+                                                              looking at its layout.</small></p>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                      <a class="btn btn-tarek btn-lg text-dark font-weight-bold btn-block btn-rounded"
+                                                          href="">Book Now
+                                                      </a>
+                                                  </div>
+                                              </div>
 
-
-                            <div class="col-lg-4 pt-3">
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="post-image tarek-position">
-                                            <a href="">
-                                                <img src="{{URL::asset('user/img/promotion2.jpg') }}"
-                                                    class="img-fluid img-thumbnail img-thumbnail-no-borders w3-round-xxlarge"
-                                                    style="height: 310px;" alt="Promotional Ads 2" />
-                                            </a>
-                                            <div class="tarek-topleft">
-                                                <button class="btn btn-tarek2 btn-rounded px-3">Promotion</button>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="row pt-5">
-                                            <div class="col-md-12">
-                                                <p class="w3-text-black font-weight-bold">Flying from Delhi-London?</p>
-                                            </div>
-                                            <div class="row pt-2">
-                                                <div class="col-md-8">
-                                                    <p><small>It is a long established fact that a
-                                                            reader will be distracted by the r
-                                                            eadable content of a page when
-                                                            looking at its layout.</small></p>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a class="btn btn-tarek btn-lg text-dark font-weight-bold btn-block btn-rounded"
-                                                        href="">Book Now
-                                                    </a>
-                                                </div>
-                                            </div>
-
+                                          </div>
                                         </div>
                                     </div>
 
                                 </div>
 
-                            </div>
+                            </div> -->
                         </div>
 
 

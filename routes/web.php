@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\Manager\ManagerController;
 
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\FeaturedContentController;
@@ -137,6 +139,8 @@ Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
     Route::get('/admin/edit-company/{id}', [CompanyController::class, 'editCompany']);
     Route::post('/admin/edit-company', [CompanyController::class, 'updateCompany'])->name('edit-company');
     Route::get('/admin/delete-company/{id}', [CompanyController::class, 'deleteCompany']);
+    Route::get('/admin/activate-company/{id}', [CompanyController::class, 'activateCompany']);
+    Route::get('/admin/deactivate-company/{id}', [CompanyController::class, 'deactivateCompany']);
 
     Route::get('/admin/company-document-types', [CompanyDocumentTypeController::class, 'viewTypes'])->name('company-document-types');
     Route::get('/admin/new-company-document-type', function () {
@@ -174,6 +178,8 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
 
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/manager/company-detail/{id}', [ManagerController::class, 'companyDetails']);
+    Route::post('', [ManagerController::class, 'newDocument'])->name('new.company.document');
 });
 
 
