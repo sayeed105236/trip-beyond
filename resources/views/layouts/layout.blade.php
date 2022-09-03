@@ -144,6 +144,9 @@
     </div>
     <div class="body m-0">
         @include('parts.userHeader') @yield('content')
+        <?php
+          $banner=App\Models\Backend\AppBanner::first();
+         ?>
         <div class="container pt-5">
             <div class="row text-center">
                 <div class="col-md-12">
@@ -151,14 +154,12 @@
                         <article class="post post-medium btn btn-rounded">
                             <div class="post-image">
                                 <a href="# ">
-                                    <img src="{{
-                                                URL::asset('user/img/ios.png')
-                                            }} " class="
+                                    <img src="{{asset("storage/app-banner/$banner->banner")}} " class="
                                                 img-fluid
                                                 img-thumbnail-no-borders
                                                 rounded-5
                                                 border-curve
-                                            " alt=" " />
+                                            " alt="Download-App-Banner" />
                                 </a>
                             </div>
                         </article>

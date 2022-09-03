@@ -44,6 +44,8 @@
                 <ul class="menu-content">
                     <li><a class="d-flex align-items-center" href="/admin/edit-about"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">About Us</span></a>
                     </li>
+                    <li><a class="d-flex align-items-center" href="/admin/terms"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Terms and Conditions</span></a>
+                    </li>
                     <!-- <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
                     </li>
                     <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
@@ -66,6 +68,8 @@
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="/admin/features"><i class="fas fa-shopping-bag"></i><span class="menu-title text-truncate" data-i18n="File Manager">Featured Contents</span></a>
             </li>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="/admin/edit-app-banner"><i class="fa-solid fa-download"></i><span class="menu-title text-truncate" data-i18n="File Manager">Download App Banner</span></a>
+            </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fa-solid fa-compass"></i><span class="menu-title text-truncate" data-i18n="Invoice">Menu & Pages</span></a>
                 <ul class="menu-content">
                     <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">New Menue</span></a>
@@ -78,17 +82,23 @@
                     </li> -->
                 </ul>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fas fa-building"></i><span class="menu-title text-truncate" data-i18n="Invoice">Company</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i class="fas fa-building"></i><span class="menu-title text-truncate" data-i18n="Invoice">B2B Company</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">All Companies</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('companies')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">All B2B Companies</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Active Companies</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('active-companies')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Active B2B Companies</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Inactive Companies</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('inactive-companies')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Inactive B2B Companies</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Pending Companies</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('pending-companies')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Pending B2B Companies</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Create New Company</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('new-company')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Create New B2B Company</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="{{route('company-types')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Company Types</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="{{route('company-document-types')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Company Document Types</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="{{route('countries')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Country List</span></a>
                     </li>
                     <!-- <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
                     </li> -->

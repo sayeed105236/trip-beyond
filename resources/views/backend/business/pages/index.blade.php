@@ -1,5 +1,6 @@
 @extends('backend.business.layouts.master')
 @section('business_content')
+
 <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>

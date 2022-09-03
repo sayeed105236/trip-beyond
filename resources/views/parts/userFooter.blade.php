@@ -38,7 +38,7 @@ $settings= App\Models\Backend\SystemSettings::first();
                             </p>
 
                             <p>
-                                <a class="text-color-light" href="">Terms &
+                                <a class="text-color-light" href="/terms">Terms &
                                     Conditions</a>
                             </p>
                             {{--

@@ -11,11 +11,11 @@
                         <form class="contact-form" action="{{ route('register') }}" method="POST">
                             @csrf
                             {{-- <div class="contact-form-success alert alert-success d-none mt-4">
-                                <strong>Success!</strong> Your message has been sent to us.
+                                <strong>Success!</strong> Registration Completed.
                             </div>
 
                             <div class="contact-form-error alert alert-danger d-none mt-4">
-                                <strong>Error!</strong> There was an error sending your message.
+                                <strong>Error!</strong> There was an error.
                                 <span class="mail-error-message text-1 d-block"></span>
                             </div> --}}
 
@@ -68,7 +68,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col">
-                                    <input type="password" style="border: 1px solid black; height:3.7em" 
+                                    <input type="password" style="border: 1px solid black; height:3.7em"
                                         data-msg-required="Please enter password." maxlength="100"
                                         class="form-control btn-rounded @error('password') is-invalid @enderror" name="password" placeholder="Password"
                                          required autocomplete="new-password">
@@ -128,6 +128,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel"

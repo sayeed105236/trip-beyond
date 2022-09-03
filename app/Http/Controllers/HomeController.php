@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Backend\Notice;
+use App\Models\Backend\FeaturedContent;
+use App\Models\Backend\Company;
+use App\Models\User;
+use App\Models\Backend\CompanyType;
+use App\Models\Backend\Country;
 
 
 class HomeController extends Controller
@@ -24,7 +30,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $notice_data=Notice::orderBy('id','desc')->first();
+      $feature_data=FeaturedContent::get();
+      $countries=Country::get();
+      $types=CompanyType::get();
+      return view('home', compact('notice_data', 'feature_data', 'countries', 'types'));
     }
 
     /**
@@ -44,6 +54,7 @@ class HomeController extends Controller
      */
     public function managerHome()
     {
-        return view('backend.business.pages.index');
+      // $company=Company::where('manager', Auth::id())->first();
+      return view('backend.business.pages.index');
     }
 }

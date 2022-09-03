@@ -7,5 +7,4 @@
     <meta name="author" content="PIXINVENT">
     <title>Trip Beyond | Go Beyond Your Dreams</title>
     @include('backend.business.partials.styles')
-
 </head>
